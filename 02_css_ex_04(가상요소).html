@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>css 연습 - 가상 요소</title>
+  <style>
+    div:before {
+      content:"test";
+      display:block;
+      width:100px;
+      height:30px;
+      background:skyblue;
+    }
+    div:after {
+      content:"";
+      display:block;
+      width:100px;
+      height:30px;
+      background:skyblue;
+    }
+  </style>
+  </head>
+  <body>
+    <div>
+      <ul>
+          <li>Html</li>
+          <li>about Us</li>
+          <li>Work</li>
+      </ul>
+    </div>
+  </body>
+</html>
