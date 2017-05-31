@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>css 연습 09 - 박스모델 css</title>
+    <style>
+    .box1 {
+      width:500px;
+      height:300px;
+      padding:30px;
+      border:5px solid red;  /*축약 코딩 */
+      margin:60px;
+      background: skyblue;
+    }
+    .inner-box {
+      width:100%;
+      height:100%;
+      background:url(/images/bg_image.jpg);
+    }
+    .padding {
+      padding: 10px 30px;
+    }
+    /*왼쪽값 상하, 오른쪽값 좌우 쌍으로 적용*/
+    .padding2 {
+      padding: 10px 10px 40px;
+    }
+    /*첫번째 위, 두번째 좌우쌍 세번째 아래값으로 적용*/
+    .padding3 {
+      padding: 10px 10px 10px 40px;
+    }
+    /*순서대로 상, 우, 하, 좌*/
+    .border1 {
+      border-width:1px;
+      border-style:dashed;
+      border-color:green;
+    }
+    /*테두리의 굵기, 모양, 색을 따로 지정*/
+    .border2 {
+      border-left: 5px solid green;
+      border-right: 2px dashed blue;
+      border-bottom: 10px dashed red;
+      border-top: 1px solid red;
+    }
+    /*테두리의 방량에 따라서 각각 지정해 줄 수 있음*/
+
+    /*
+    조합해서 사용 가능
+    border-left-width
+    border-left-style
+    border-left-color
+    */
+
+    </style>
+  </head>
+  <body>
+    <div>
+      <div class="box1 border1">
+        <div class="inner-box">
+          박스모델
+        </div>
+      </div>
+      <div class="box1 border2">
+        박스 모델
+      </div>
+      <div class="box1 padding ">
+        <div class="inner-box">
+          박스모델
+        </div>
+      </div>
+      <div class="box1 padding2">
+        <div class="inner-box">
+          박스모델
+        </div>
+      </div>
+      <div class="box1 padding3">
+        <div class="inner-box">
+          박스모델
+        </div>
+      </div>
+    </div>
+
+<!-- padding - 배경이 적용됨 -->
+<!-- margin - 박스가 세로 방량으로 배치될때 마진이 겹침, 마진값이 큰쪽만 적용됨 가로배열은 겹침 부분이 안생김 -->
+
+div+div>p>span+em+bq
+<div></div>
+<div>
+  <p>
+    <span></span>
+    <em></em>
+    <blockquote></blockquote>
+  </p>
+</div>
+
+
+div+div>p>span+em^bq
+<div></div>
+<div>
+  <p><span></span><em></em></p>
+  <blockquote></blockquote>
+</div>  
+
+
+  </body>
+</html>

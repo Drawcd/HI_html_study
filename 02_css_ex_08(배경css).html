@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>CSS 연습 8 - 배경 CSS</title>
+    <style>
+      body {
+        background-color:#ddd;
+        background-image: url(/images/bg_image.jpg);
+        background-repeat:no-repeat;
+        background-position: 1110px 0px ;
+        background-attachment: fixed;
+        /*background-attachment는 배경의 위치를 고정할때 사용한다.
+        background-attachment는 브라우저 크기가 기준이 된다
+        */
+      }
+      /*
+      16진수 색표현 방법
+      각 색을 표현하는 두자리수가 같은 숫자로 반복될 때 - 한자리는 생략 가능
+      ex) #ff77aa => f7a
+      */
+      .bg-img {
+        background-image: url(/images/bg_image.jpg);
+        width:500px;
+        height:300px;
+      }
+      .bg-repeat {
+        background-repeat: no-repeat;
+        background-color:red;
+      }
+      .bg-position {
+        background-position: 100px 50px;
+        height:200px;
+      }
+      .bg-fixed {
+        width:100%;
+        height:800px;
+        background-position: center 850px;
+        background-attachment: fixed;
+      }
+      .bg-short {
+        width:100%;
+        height:1080px;
+        background:#aa55dd url(/images/5-1.jpg) no-repeat 100px 100px fixed;
+      }
+      .bg-short2 {
+        width:100%;
+        height:1080px;
+        background:#aa55dd url(/images/5-1.jpg) no-repeat 300px 100px fixed;
+      }
+      .no-attach {
+        background: scroll;
+      }
+    </style>
+  </head>
+  <body>
+
+<div class="bg-img">
+  배경이미지
+</div>
+<br>
+<div class="bg-img bg-repeat">
+  배경이미지
+</div>
+<br>
+<div class="bg-img bg-repeat bg-position">
+  배경이미지
+</div>
+<br>
+<div class="bg-img bg-repeat bg-fixed">
+  배경이미지
+</div>
+<br>
+<div class="bg-short">
+  배경이미지
+</div>
+<br>
+<div class="bg-short2 no-attach">
+  배경이미지
+</div>
+
+<p>
+  test
+  <p>
+test2
+  </p>
+  test3
+</p>
+
+  </body>
+</html>
