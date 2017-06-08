@@ -10,7 +10,8 @@
     body,
     div {
       box-sizing: border-box;
-      /*text-align: center;*/
+      text-align: center;
+      line-height:100px;
     }
 
     .clear {
@@ -22,6 +23,7 @@
       display: block;
       clear: both;
     }
+
     .after::after {
       content: "";
       display: block;
@@ -37,7 +39,7 @@
     .layout {
       width: 600px;
       margin: 10px;
-      float:left;
+      float: left;
     }
 
     .float-left {
@@ -157,112 +159,162 @@
       background: rgb(179, 241, 28);
     }
 
-      .h100 {
-        height: 100px;
-      }
 
-      .h200 {
-        height: 200px;
-      }
 
-      .h300 {
-        height: 300px;
-      }
 
-      .h400 {
-        height: 400px;
-      }
-      .h500 {
-        height: 500px;
-      }
-      .h600 {
-        height: 600px;
-      }
-      .w600 {
-        width: 600px;
-      }
+    .ib {
+      display: inline-block;
+    }
 
-      .w500 {
-        width: 500px;
-      }
-      .w400 {
-        width: 400px;
-      }
+    .pr {
+      position: relative;
+    }
 
-      .w300 {
-        width: 300px;
-      }
+    .ab {
+      position: absolute;
+    }
 
-      .w200 {
-        width: 200px;
-      }
+    /*    높이 class 시작*/
 
-      .w150 {
-        width: 150px;
-      }
-      .w100 {
-        width: 100px;
-      }
-      .w50 {
-        width: 50px;
-      }
+    .h100 {
+      height: 100px;
+    }
 
-      .c1 {
-        background: #111;
-      }
+    .h200 {
+      height: 200px;
+    }
 
-      .c2 {
-        background: #222;
-      }
+    .h300 {
+      height: 300px;
+    }
 
-      .c3 {
-        background: #333;
-      }
+    .h400 {
+      height: 400px;
+    }
 
-      .c4 {
-        background: #444;
-      }
+    .h500 {
+      height: 500px;
+    }
 
-      .c5 {
-        background: #555;
-      }
+    .h600 {
+      height: 600px;
+    }
+    /*    높이 class 끝*/
 
-      .c6 {
-        background: #666;
-      }
+    /*    넓이 class 시작*/
+    .w50 {
+      width: 50px;
+    }
 
-      .c7 {
-        background: #777;
-      }
+    .w100 {
+      width: 100px;
+    }
 
-      .b0101 {
-        width: 400px;
-        height: 100px;
-      }
-      /*.cb {
+    .w150 {
+      width: 150px;
+    }
+
+    .w200 {
+      width: 200px;
+    }
+
+    .w300 {
+      width: 300px;
+    }
+
+    .w400 {
+      width: 400px;
+    }
+
+    .w500 {
+      width: 500px;
+    }
+
+    .w600 {
+      width: 600px;
+    }
+
+    .w700 {
+      width: 700px;
+    }
+
+    .w800 {
+      width: 800px;
+    }
+
+    .w1000 {
+      width: 1000px;
+    }
+    /*    넓이 class 끝*/
+
+    /*    색상 class 시작*/
+    .c1 {
+      background: #f44336;
+    }
+
+    .c2 {
+      background: #e91e63;
+    }
+
+    .c3 {
+      background: #9c27b0;
+    }
+
+    .c4 {
+      background: #2196f3;
+    }
+
+    .c5 {
+      background: #4caf50;
+    }
+
+    .c6 {
+      background: #ffeb3b;
+    }
+
+    .c7 {
+      background: #ff9800;
+    }
+
+    .c8 {
+      background: #ff5722;
+    }
+
+    .c9 {
+      background: #795548;
+    }
+
+    /*    색상 class 끝*/
+
+
+    .b0101 {
+      width: 400px;
+      height: 100px;
+    }
+    /*.cb {
       background:#ccc;
       border: white solid 2px;
       box-sizing: border-box;
     }*/
 
-      .b01 {
-        width: 400px;
-        height: 500px;
-        display: block;
-      }
+    .b01 {
+      width: 400px;
+      height: 500px;
+      display: block;
+    }
 
-      .b01:after {
-        content: "";
-        display: block;
-        clear: both;
-      }
+    .b01:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
 
-      .b010101 {
-        height: 200px;
-        width: 400px;
-        background: red;
-      }
-    </style>
+    .b010101 {
+      height: 200px;
+      width: 400px;
+      background: red;
+    }
+  </style>
 
 </head>
 
@@ -301,37 +353,34 @@
       <div class="float n0102">n0102</div>
       <div class="float n0103">n0103</div>
     </div>
-    <div class="n02">
-    </div>
+    <div class="n02">n02</div>
     <div class="middle">
       <div class="float n0101">n0101</div>
       <div class="float n0102">n0102</div>
       <div class="float n0103">n0103</div>
     </div>
-    <div class="bottom"></div>
+    <div class="bottom">bottom</div>
   </div>
 
 
 
 
 
-  <div class="layout" style="float:none; width:1000px;">
-    <div>
-      <div class="b01 float-left">
-        <div class="b0101 cb h100 w400 c6">01</div>
-        <div class="b010101 cb h200 w400">
-          <div class="b01010101 cb h200 w100 float-left c1">02</div>
-          <div class="b01010102 cb w300 float-left c2">
-            <div class="cb w200 h100 float-left c3">03</div>
-            <div class="cb w100 h100 float-left c4">04</div>
-            <div class="cb w100 h100 float-left c5">05</div>
-            <div class="cb w100 h100 float-left c6">06</div>
-            <div class="cb w100 h100 float-left c7">07</div>
-          </div>
+  <div class="layout w1000">
+    <div class="b01 float-left">
+      <div class="b0101 cb h100 w400 c6">01</div>
+      <div class="b010101 cb h200 w400">
+        <div class="b01010101 cb h200 w100 float-left c1">02</div>
+        <div class="b01010102 cb w300 float-left c2">
+          <div class="cb w200 h100 float-left c3">03</div>
+          <div class="cb w100 h100 float-left c4">04</div>
+          <div class="cb w100 h100 float-left c5">05</div>
+          <div class="cb w100 h100 float-left c6">06</div>
+          <div class="cb w100 h100 float-left c7">07</div>
         </div>
-        <div class="b010102 cb h100 w400 c5">5</div>
-        <div class="b010103 cb h100 w400 c6">6</div>
       </div>
+      <div class="b010102 cb h100 w400 c5">05</div>
+      <div class="b010103 cb h100 w400 c6">06</div>
     </div>
     <div class="b02 float-left">
       <div class="w100 h400 c1">07</div>
@@ -380,42 +429,30 @@
     </div>
   </div>
 
-<style>
-  .ib {
-    display:inline-block;
-  }
-  .pr {
-    position:relative;
-  }
-  .ab {
-    position:absolute;
-  }
-</style>
-
-<div class="layout after" style="float:none; width:800px;">
-  <div class="f01 h600 float-left pr" style="width:800px;">
-    <div class="w200 h200 c1 float-left">01</div>
-    <div class="w400 h100 c2 float-left">02</div>
-    <div class="w200 h100 c3 float-left">03</div>
-    <div class="w200 h100 c4 float-left">04</div>
-    <div class="w400 h300 c6 float-left">05</div>
-    <div class="w200 h200 c6 float-left">06</div>
-    <div class="w200 h100 float-left">07</div>
-    <div class="w200 h100 c2 float-left">08</div>
-    <div class="w200 h100 c3 float-left">09</div>
-    <div class="w600 h100 c4 float-left">10</div>
-    <div class="ab w400 h300 " style="top:200px; float:none; display:block; clear:both;">
-      <div class="ab w400 h100 c3">11</div>
-      <div class="ab w200 h100 c4" style="top:100px; float:none; display:block; clear:both;">12</div>
+  <div class="layout after" style="float:none; width:800px;">
+    <div class="f01 h600 float-left pr" style="width:800px;">
+      <div class="w200 h200 c1 float-left">01</div>
+      <div class="w400 h100 c2 float-left">02</div>
+      <div class="w200 h100 c3 float-left">03</div>
+      <div class="w200 h100 c4 float-left">04</div>
+      <div class="w400 h300 c6 float-left">05</div>
+      <div class="w200 h200 c6 float-left">06</div>
+      <div class="w200 h100 float-left">07</div>
+      <div class="w200 h100 c2 float-left">08</div>
+      <div class="w200 h100 c3 float-left">09</div>
+      <div class="w600 h100 c4 float-left">10</div>
+      <div class="ab w400 h300 " style="top:200px;">
+        <div class="ab w400 h100 c3">11</div>
+        <div class="ab w200 h100 c4" style="top:100px;">12</div>
+      </div>
+      <div class="ab w200 h200 ib" style="top:300px; left:200px; background:#ffcc00">13</div>
     </div>
-    <div class="ab w200 h200 ib" style="top:300px; left:200px; display:block; background:#ffcc00">13</div>
   </div>
-</div>
 
 
 
 
-    </div>
+  </div>
 
   </div>
 

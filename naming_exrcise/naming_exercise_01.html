@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>네이밍 연습 1 - gnb 영역 작업</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="naming_exercise_01.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <script>
+      $(function(){
+        $('.gnb-depth1-link').on('mouseover',function(){
+          $(this).next('.gnb-depth2').css('display','block');
+          });
+        $('.gnb-depth1-item').on('mouseleave',function(){
+          // $(this).next('.gnb-depth2').css('display','none');
+          $(this).children('.gnb-depth2').css('display','none');
+          });
+
+          $('.gnb-depth2-link').on('mouseover',function(){
+            $(this).next('.gnb-depth3').css('display','block');
+            });
+          $('.gnb-depth2-item').on('mouseleave',function(){
+            // $(this).next('.gnb-depth2').css('display','none');
+            $(this).children('.gnb-depth3').css('display','none');
+            });
+
+
+
+      });
+
+    </script>
+  </head>
+  <body>
+    <!--
+    gnb :  Global Navigation Bar - 메인 메뉴
+    lib : Local Navigation Bar - 사이드메뉴 / 로컬메뉴
+    -->
+<nav class="gnb">
+  <ul class="gnb-depth1">
+
+    <li class="gnb-depth1-item">
+      <a href="#이용안내" class="gnb-depth1-link">이용안내</a>
+      <ul class="gnb-depth2">
+        <li class="gnb-depth2-item"><a href="#이용시간/요금" class="gnb-depth2-link">이용시간/요금</a></li>
+        <li class="gnb-depth2-item"><a href="#할인프로모션" class="gnb-depth2-link">할인프로모션</a></li>
+        <li class="gnb-depth2-item"><a href="#제휴카드할인" class="gnb-depth2-link">제휴카드할인</a></li>
+      </ul>
+    </li>
+
+    <li class="gnb-depth1-item">
+      <a href="#" class="gnb-depth1-link">행사·공연</a>
+      <ul class="gnb-depth2">
+        <li class="gnb-depth2-item">
+        <a href="#" class="gnb-depth2-link">행사마당</a>
+          <ul class="gnb-depth3">
+            <li class="gnb-depth3-item">
+              <a href="#" class="gnb-depth3-link">민속촌NOW</a>
+            </li>
+            <li class="gnb-depth3-item">
+              <a href="#" class="gnb-depth3-link">연간행사일정</a>
+            </li>
+            <li class="gnb-depth3-item">
+              <a href="#" class="gnb-depth3-link">계절행사일정</a>
+            </li>
+          </ul>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="#" class="gnb-depth2-link">공연마당</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="#" class="gnb-depth2-link">사극마당</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="#" class="gnb-depth2-link">체험마당</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="gnb-depth1-item">
+      <a href="#" class="gnb-depth1-link">단체프로그램</a>
+      <ul class="gnb-depth2">
+        <li class="gnb-depth2-item">
+          <a href="#" class="gnb-depth2-link">일일체험학습</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="#" class="gnb-depth2-link">기업외국인·단체</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="#" class="gnb-depth2-link">유스호스텔</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="#" class="gnb-depth2-link">전통혼례</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="gnb-depth1-item">
+      <a href="#" class="gnb-depth1-link">민속마을</a>
+      <ul class="gnb-depth2">
+        <li class="gnb-depth2-item">
+          <a href="#" class="gnb-depth2-link">민속마당</a>
+          <ul class="gnb-depth3">
+            <li class="gnb-depth3-item">
+              <a href="#" class="gnb-depth3-link">
+                조선시대마을
+              </a>
+            </li>
+            <li class="gnb-depth3-item">
+              <a href="#" class="gnb-depth3-link">
+                추천관람코스
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="#" class="gnb-depth2-link">전시마당</a>
+          <ul class="gnb-depth3">
+            <li class="gnb-depth3-item">
+              <a href="#" class="gnb-depth3-link">
+                전통민속관
+              </a>
+            </li>
+            <li class="gnb-depth3-item">
+              <a href="#" class="gnb-depth3-link">
+                세계민속관
+              </a>
+            </li>
+            <li class="gnb-depth3-item">
+              <a href="#" class="gnb-depth3-link">
+                탈춤전시관
+              </a>
+            </li>
+            <li class="gnb-depth3-item">
+              <a href="#" class="gnb-depth3-link">
+                옹기전시관
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="#" class="gnb-depth2-link">먹거리마당</a>
+          <ul class="gnb-depth3">
+            <li class="gnb-depth3-item">
+              <a href="#" class="gnb-depth3-link">
+                장터
+              </a>
+            </li>
+            <li class="gnb-depth3-item">
+              <a href="#" class="gnb-depth3-link">
+                상가마을
+              </a>
+            </li>
+          </ul>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="#" class="gnb-depth2-link">살거리마당</a>
+          <ul class="gnb-depth3">
+            <li class="gnb-depth3-item">
+              <a href="#" class="gnb-depth3-link">
+                기념품
+              </a>
+            </li>
+            <li class="gnb-depth3-item">
+              <a href="#" class="gnb-depth3-link">
+                공방
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+    <li class="gnb-depth1-item">
+      <a href="#" class="gnb-depth1-link">놀이마을</a>
+      <ul class="gnb-depth2">
+        <li class="gnb-depth2-item">
+          <a href="#" class="gnb-depth2-link">어트랙션</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="#" class="gnb-depth2-link">전성의고향</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="#" class="gnb-depth2-link">귀신전</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="#" class="gnb-depth2-link">조각공원</a>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="#" class="gnb-depth2-link">먹거리·살거리</a>
+        </li>
+      </ul>
+    </li>
+
+    <li class="gnb-depth1-item">
+      <a href="#" class="gnb-depth1-link">한국민속촌소개</a>
+      <ul class="gnb-depth2 last">
+        <li class="gnb-depth2-item">
+          <a href="#" class="gnb-depth2-link">한국민속촌소개</a>
+          <ul class="gnb-depth3 depth3-5">
+            <li class="gnb-depth3-item">
+              <a href="#" class="gnb-depth3-link">민속촌소개</a>
+            </li>
+            <li class="gnb-depth3-item">
+              <a href="#" class="gnb-depth3-link">시설및현황</a>
+            </li>
+          </ul>
+        </li>
+        <li class="gnb-depth2-item">
+          <a href="#" class="gnb-depth2-link">과거그리고미래</a>
+          <ul class="gnb-depth3 depth3-6">
+            <li class="gnb-depth3-item">
+              <a href="#" class="gnb-depth3-link">민속촌의 발자취</a>
+            </li>
+            <li class="gnb-depth3-item">
+              <a href="#" class="gnb-depth3-link">연혁</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+</nav>
+
+  </body>
+</html>
