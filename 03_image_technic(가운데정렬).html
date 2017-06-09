@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>가운데 정렬</title>
+
+  <style>
+    body {
+      font-weight: bold;
+    }
+
+    div {
+      margin-top: 10px;
+    }
+
+    div span {
+      background: #4caf50;
+    }
+
+    .c1 {
+      color: #fff;
+      text-shadow: 1px 1px 1px gray;
+    }
+
+    .c2 {
+      color: #2196f3;
+      text-shadow: 1px 1px 1px gray;
+    }
+
+    .c3 {
+      color: #cddc39;
+      text-shadow: 1px 1px 1px gray;
+    }
+
+    .c4 {
+      color: #607d8b;
+      text-shadow: 1px 1px 1px gray;
+    }
+
+    .c5 {
+      color: #9c27b0;
+      text-shadow: 1px 1px 1px gray;
+    }
+
+    .c6 {
+      color: #795548;
+      text-shadow: 1px 1px 1px gray;
+    }
+
+    .cx {
+      color: #b20c11;
+      text-shadow: 1px 1px 1px gray;
+    }
+
+    .inline {
+      display: inline;
+    }
+
+    .block {
+      display: block;
+    }
+
+    .margin-auto {
+      margin: 0 auto;
+      background: #e91e63;
+    }
+
+    .block-center {
+      margin: 0 auto;
+      background: #13709d;
+    }
+
+    .margin20 {
+      margin-top: 20px;
+    }
+
+    /*1-1 */
+    .text-align {
+      text-align: center;
+      background: #ffcc00;
+    }
+
+    .fix-width {
+      width: 300px;
+    }
+
+    .pos {
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    .wrap-width {
+      width: 500px;
+      background: #73fcea;
+    }
+    /*absolute를 이용하여 가운데 정렬*/
+
+    .pos-relative {
+      position: relative;
+      background: #00bcd4;
+      height: 30px;
+      /*자식이 absolute이기때문에 높이를 줘야 배경색상이 칠해진다. */
+    }
+
+    .absolute-center {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      margin-left: -150px;
+    }
+    /*2. 세로 가운데 정렬*/
+    /*2-1. 줄간격 사용한 세로 가운데 정렬*/
+
+    .wrap-height {
+      height: 200px;
+      background: #ffc107;
+      position: relative;
+    }
+
+    .vertical-align1 {
+      line-height: 200px;
+    }
+
+    .vertical-align2 {
+      vertical-align: middle;
+    }
+
+
+
+    .absolute-vt-center {
+      height: 440px;
+      position: absolute;
+      top: 50%;
+      margin-top: -20px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- 1. 가로방향 가운데 정렬 -->
+  <!-- 1.1. 텍스트 , 인라인 요소 가운데 정렬 -->
+  <div class="text-align">텍스트 가운데 정렬01</div>
+
+  <div class="text-align">
+    <span>텍스트 가운데 정렬02</span>
+  </div>
+
+  <div>
+    <span class="text-align">텍스트 가운데 정렬03</span>
+  </div>
+
+  <div class="text-align fix-width">텍스트 가운데 정렬04</div>
+
+  <div class="text-align pos-absolute">텍스트 가운데 정렬05</div>
+
+  <div>
+    <span class="text-align block">텍스트 가운데 정렬06</span>
+  </div>
+
+  <div>
+    <span class="margin-auto">텍스트 가운데 정렬07</span>
+  </div>
+  <!-- span은 블럭이 아니기때문에 margin:0 auto로 중앙 배열이 되지 않는다. -->
+  <div>
+    <span class="margin-auto block">텍스트 가운데 정렬07</span>
+  </div>
+  <!-- span은 블럭이 아니기때문에 margin:0 auto로 중앙 배열이 되지 않는다. display로 block을 만들면 span의 넓이가 부모를 따라가기때문에 margin:auto가 적용되지 않는다. -->
+
+
+
+  <!-- 블럭 안에 블럭이 있을경우 넓이는 부모를 따라가지만 자식요소가 float display:inlie position:absolute일경우 블럭의 넓이는 자식을 따라간다. -->
+
+  <!-- 1-2. 가로길이 지정된 블럭요소의 가운데 정렬 -->
+  <div class="wrap-width">
+    <div class="fix-width block-center">블럭요소 가운데 정렬</div>
+  </div>
+
+  <!-- 1-3. position:absolute 를 적용해서 가운데 정렬 -->
+
+  <div class="wrap-width pos-relative">
+    <div class="fix-width absolute-center">position:absolute로 박스 가운데 정렬</div>
+  </div>
+
+  <!-- 2. 세로방향 가운데 정렬 -->
+  2-1. 줄간격을 사용한 세로 가운데 정렬 - 텍스트, 인라인 요소 세로 가운데 정렬
+  <div class="wrap-height vertical-align1 margin20">
+    텍스트 세로정렬
+  </div>
+
+  <div class="wrap-height vertical-align1 margin20">
+    <span>텍스트 세로정렬</span>
+  </div>
+
+  <p class=" ">line-height로 텍스트를 중앙 정렬해줬을경우 아래와 같이 텍스트 줄간격 높이가 넓어지기 때문에 여러줄 텍스트를 넣을 수 없다.</p>
+  <!-- 여러줄이 생기는 경우에는 줄간격을 이용해서 세로 가운데 정렬할 수 없음 -->
+  <div class="wrap-height vertical-align1 margin20 fix-width">
+    텍스트 세로정렬 텍스트 세로정렬텍스트 세로정렬텍스트 세로정렬
+  </div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <!-- 2-2. position:absolute를 적용해서 세로 가운데 정렬하는 방법 -->
+  <div class="wrap-height c1">
+    <div class="absolute-vt-center">
+      박스 세로 정렬
+    </div>
+  </div>
+
+
+</body>
+
+</html>
