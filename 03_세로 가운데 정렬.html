@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>absolute-vt-center</title>
+</head>
+<style>
+
+/*-1-1. 텍스트, 인라인 요소 가운데 정렬*/
+.text-align{
+text-align: center;
+background: yellowgreen;
+}
+.fix-width{
+ width: 300px;
+}
+.pos-absolute{
+ position: absolute;
+ top:100px;
+ right: 0;
+ }
+
+ /-1-2. 블록요소 가운데 정렬*-
+  .block-center{
+  /-좌우 마진을 오토로 설정*-
+  margin:0 auto;
+  background: #aa55dd;
+  }
+
+
+
+
+  .absolute-vt-center {
+    height: 40px;
+    position: absolute;
+    top: 50%;
+    margin-top: -20px;
+    background: orange;
+  }
+  /* 2-3 verrical-align css property */
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+
+  .table {
+    border: 1px solid #e6710c;
+    background:#ffcc00;
+  }
+
+  .table td {
+    width: 200px;
+    height: 200px;
+    text-align: center;
+    border-right: 1px solid #333;
+    border-left: 1px solid #333;
+  }
+
+
+
+  .vt-align-text {
+    vertical-align: middle;
+  }
+
+  .vt-align-box {
+    vertical:bottom;
+    background:skyblue;
+  }
+
+  .display-cell {
+    display:table-cell;
+  }
+
+  .wrap-height {
+    height:200px;
+    width:200px;
+    background:skyblue;
+    vertical-align:middle;
+    text-align:center;
+  }
+
+
+</style>
+
+<body>
+
+
+
+  <div></div>
+
+  <div class="absolute-vt-center">텍스트 세로정렬</div>
+
+    <table class="table">
+      <tr class="">
+        <td class="vt-align-text">
+          텍스트 세로정렬
+        </td>
+        <td class="vt-align-box">
+          <div class="align-box">
+            박스 세로정렬
+          </div>
+        </td>
+      </tr>
+    </table>
+
+    <div class="wrap-height display-cell">
+      텍스트 세로정렬
+    </div>
+
+<div class="wrap-height display-cell">
+  텍스트 세로 정렬 <br>
+  텍스트 세로 정렬
+</div>
+
+<!-- display:tbble-cell
+vertical-align:middle
+float:left / float:right
+1. float 속성 사용 => 자동으로 블럭 요소 성격
+2. float 속성 사용 => display:table-cell 속성이 해제 되기 때문에 vercal-align 속성을 사용할 수 없다 -->
+
+
+</body>
+
+</html>
