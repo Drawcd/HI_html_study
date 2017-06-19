@@ -2,7 +2,7 @@
 Tutorial 연습 소스
 
 ## 01. HTML Element 설명/연습용 소스
-    01_html_ex_01.html : HTML 기초 구조 예제 (https://github.com/Drawcd/tutorial/blob/master/01_html_ex_01(html%20dtd).html)
+    [01_html_ex_01.html](https://github.com/Drawcd/tutorial/blob/master/01_html_ex_01(html%20dtd).html) : HTML 기초 구조 예제] 
     syntax: [01_html_ex_02.html](link)
     syntax: [01_html_ex_03.html](link)
     syntax: [01_html_ex_04.html](link)
