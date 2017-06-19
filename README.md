@@ -1,6 +1,23 @@
-# html_tnt
-HTML 튜토리얼 연습 소스
-+ HTML Element 연습
+# Tutorial
+Tutorial 연습 소스
 
+## 01. HTML Element 설명/연습용 소스
+    01_html_ex_01.html : HTML 기초 구조 예제 (https://github.com/Drawcd/tutorial/blob/master/01_html_ex_01(html%20dtd).html)
+    syntax: [01_html_ex_02.html](link)
+    syntax: [01_html_ex_03.html](link)
+    syntax: [01_html_ex_04.html](link)
+    syntax: [01_html_ex_05.html](link)
+    syntax: [01_html_ex_06.html](link)
+    syntax: [01_html_ex_07.html](link)
+    syntax: [01_html_ex_08.html](link)
+    syntax: [01_html_ex_09.html](link)
+    syntax: [01_html_ex_10.html](link)
+    syntax: [01_html_ex_11.html](link)
+    syntax: [01_html_ex_12.html](link)
+    syntax: [01_html_ex_13.html](link)
 
-01. 수정
+## 02. CSS
+
+## 03. 구현 기법 정리
+
+## 04.GNB 제작 및 네이밍 연습
