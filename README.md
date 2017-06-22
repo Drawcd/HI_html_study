@@ -60,4 +60,4 @@ Tutorial 연습 소스
 4. GNB 제작 및 네이밍 연습
 
 - [naming_exercise_01(hi).html](https://github.com/Drawcd/tutorial/tree/master/naming_exercise/naming_exercise_01(hi).html) : 네이밍 연습, 복잡한 구조의 GNB 연습
-- [naming_exercise_01(lkh).html](https://github.com/Drawcd/tutorial/tree/master/naming_exercise/naming_exercise_01(lkh).html) : 네이밍 연습, 복잡한 구조의 GNB 연습 개인 작성
+- [naming_exercise_01.html](https://github.com/Drawcd/tutorial/tree/master/naming_exercise/naming_exercise_01.html) : 네이밍 연습, 복잡한 구조의 GNB 연습 개인 작성
