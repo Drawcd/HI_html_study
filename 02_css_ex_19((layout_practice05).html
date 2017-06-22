@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CSS 연습 19 - 레이아웃 연습 5</title>
+  <style>
+    .box{
+      float:left;
+      color:#fff;
+      font-weight:bold;
+    }
+
+    .box1{
+      width:40%;
+    }
+
+    .box2{
+      width:10%;
+    }
+
+    .box3{
+      width:20%;
+    }
+
+    .box4{
+      width:10%;
+    }
+
+    .box5{
+      width:20%;
+    }
+
+    .box1-top{
+      width:100%;
+      height:100px;
+      background:#333;
+    }
+
+    .box1-mid-top:after{
+      content:"";
+      display:block;
+      clear:both;
+    }
+
+    .box1-mid-top-left{
+      float:left;
+      width:25%;
+      height:200px;
+      background:#666;
+    }
+
+    .box1-mid-top-center{
+      float:left;
+      width:50%;
+    }
+
+    .box1-mid-top-center-top{
+      width:100%;
+      height:100px;
+      background:#999;
+    }
+
+    .box1-mid-top-center-bottom:after{
+      content:"";
+      display:block;
+      clear:both;
+    }
+
+    .box1-mid-top-center-bottom-left{
+      width:50%;
+      height:100px;
+      background:#bbb;
+      float:left;
+    }
+
+    .box1-mid-top-center-bottom-right{
+      width:50%;
+      height:100px;
+      float:left;
+      background:#ddd;
+    }
+
+    .box1-mid-top-right{
+      float:left;
+      width:25%;
+    }
+
+    .box1-mid-top-right-top{
+      width:100%;
+      height:100px;
+      background:#ddd;
+    }
+
+    .box1-mid-top-right-bottom{
+      width:100%;
+      height:100px;
+      background:#333;
+    }
+
+    .box1-mid-bottom{
+      width:100%;
+      height:100px;
+      background:#aaa;
+    }
+
+    .box1-bottom{
+      width:100%;
+      height:100px;
+      background:#ddd;
+    }
+
+    .box2-top{
+      width:100%;
+      height:400px;
+      background:#666;
+    }
+
+    .box2-bottom{
+      width:100%;
+      height:100px;
+      background:#333;
+    }
+
+    .box3-top{
+      width:100%;
+      height:100px;
+      background:#999;
+    }
+
+    .box3-mid-top:after{
+      content:"";
+      display:block;
+      clear:both;
+    }
+
+    .box3-mid-top-left{
+      width:50%;
+      height:100px;
+      background:#aaa;
+      float:left;
+    }
+
+    .box3-mid-top-right{
+      width:50%;
+      height:100px;
+      background:#333;
+      float:left;
+    }
+
+    .box3-bottom:after{
+      content:"";
+      display:block;
+      clear:both;
+    }
+
+    .box3-left{
+      width:50%;
+      height:400px;
+      float:left;
+      background:#bbb;
+    }
+
+    .box3-right{
+      width:50%;
+      float:left;
+      background:#aaa;
+    }
+
+    .box3-right-top{
+      width:100%;
+      height:100px;
+      background:#999;
+    }
+
+    .box3-right-bottom{
+      width:100%;
+      height:200px;
+      background:#666;
+    }
+
+    .box4-top{
+      width:100%;
+      height:400px;
+      background:#aaa;
+    }
+
+    .box4-bottom{
+      width:100%;
+      height:200px;
+      background:#ddd;
+    }
+
+    .box5-top:after{
+      content:"";
+      display:block;
+      clear:both;
+    }
+
+    .box5-top-left{
+      width:50%;
+      height:100px;
+      float:left;
+      background:#999;
+    }
+
+    .box5-top-right{
+      width:50%;
+      height:100px;
+      float:left;
+      background:#aaa;
+    }
+
+    .box5-mid{
+      width:100%;
+      height:200px;
+      background:#333;
+    }
+
+    .box5-bottom{
+      width:100%;
+      height:100px;
+      background:#ddd;
+    }
+
+
+  </style>
+</head>
+<body>
+
+<div class="box box1">
+  <div class="box1-top">1</div>
+  <div class="box1-mid-top">
+    <div class="box1-mid-top-left">2</div>
+    <div class="box1-mid-top-center">
+      <div class="box1-mid-top-center-top">3</div>
+      <div class="box1-mid-top-center-bottom">
+        <div class="box1-mid-top-center-bottom-left">4</div>
+        <div class="box1-mid-top-center-bottom-right">5</div>
+      </div>
+    </div>
+    <div class="box1-mid-top-right">
+      <div class="box1-mid-top-right-top">6</div>
+      <div class="box1-mid-top-right-bottom">7</div>
+    </div>
+  </div>
+  <div class="box1-mid-bottom">8</div>
+  <div class="box1-bottom">9</div>
+</div>
+
+<div class="box box2">
+  <div class="box2-top">10</div>
+  <div class="box2-bottom">11</div>
+</div>
+
+<div class="box box3">
+  <div class="box3-top">12</div>
+  <div class="box3-mid-top">
+    <div class="box3-mid-top-left">13</div>
+    <div class="box3-mid-top-right">14</div>
+  </div>
+  <div class="box3-bottom">
+    <div class="box3-left">15</div>
+    <div class="box3-right">
+      <div class="box3-right-top">16</div>
+      <div class="box3-right-bottom">17</div>
+    </div>
+  </div>
+</div>
+
+<div class="box box4">
+  <div class="box4-top">18</div>
+  <div class="box4-bottom">19</div>
+</div>
+
+<div class="box box5">
+  <div class="box5-top">
+    <div class="box5-top-left">20</div>
+    <div class="box5-top-right">21</div>
+  </div>
+  <div class="box5-mid">22</div>
+  <div class="box5-bottom">23</div>
+</div>
+
+</body>
+</html>

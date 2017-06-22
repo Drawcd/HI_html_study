@@ -2,19 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>css 연습 02 - 선택자 연습</title>
+    <title>css 연습 2 - 선택자 연습</title>
 <style>
 
-
+  body {
+    color:#333;
+  }
 
   /*자식 선택자 연습*/
   ul>li{
-    color:orange;
+    background-color:skyblue;
   }
 
   ul li {
-    background-color:skyblue;
+    /*background-color:skyblue;*/
+    color:orange;
   }
+
+  .test1>.test2 {
+    font-size:32px;
+  }
+
+  .test1 .test2 {
+    font-size:50px;
+    color:red;
+  }
+
+ /*.부모선택자>.자식선택자 부모자식간의 관계형 선택자*/
+ /*.부모선택자 .자손선택자 부모아래 자손을 모두 선택하는 선택자*/
+
 
   /*인접 선택자 연습*/
   h2+p {
@@ -26,19 +42,26 @@
   input[type=button] {
     background-color:red;
   }
+
 </style>
 </head>
 <body>
 <!-- 자식 선택자 연습 -->
-<ul>
+<ul class="test1">
   <li>
     <div>HTML</div>
-    <ol>
+    <ol >
       <li>Markup</li>
       <li>Structure</li>
+      <ul  class="test2">
+        test
+        <ol>
+          <li>Markup</li>
+          <li>Structure</li>
+      </ul>
     </ol>
     </li>
-  <li>CSS</li>
+  <li class="test2">CSS</li>
   <li>Javascript</li>
 </ul>
 <p>

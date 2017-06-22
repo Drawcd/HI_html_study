@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>css 연습 - 가상 요소</title>
+    <title>css 연습 04 - 가상 요소</title>
   <style>
     div:before {
       content:"test";
@@ -18,6 +18,13 @@
       height:30px;
       background:skyblue;
     }
+
+    /*마우스로 드래그해서 텍스트를 블럭 선택했을때의 색상을 정할 수 있다.*/
+    div::selection {
+      color:#ffcc00;
+    }
+
+
   </style>
   </head>
   <body>

@@ -50,6 +50,12 @@
     border-left-color
     */
 
+    /*
+    box-sizing:border-box 적용
+    => padding, border가 width/height에 포함
+    => width/height 가 margin을 뺀 박스 전체길이가 됨
+    */
+
     </style>
   </head>
   <body>
@@ -82,7 +88,9 @@
 <!-- padding - 배경이 적용됨 -->
 <!-- margin - 박스가 세로 방량으로 배치될때 마진이 겹침, 마진값이 큰쪽만 적용됨 가로배열은 겹침 부분이 안생김 -->
 
-div+div>p>span+em+bq
+
+<!-- emmet 사용방법 -->
+<!-- div+div>p>span+em+bq -->
 <div></div>
 <div>
   <p>
@@ -93,12 +101,12 @@ div+div>p>span+em+bq
 </div>
 
 
-div+div>p>span+em^bq
+<!-- div+div>p>span+em^bq -->
 <div></div>
 <div>
   <p><span></span><em></em></p>
   <blockquote></blockquote>
-</div>  
+</div>
 
 
   </body>

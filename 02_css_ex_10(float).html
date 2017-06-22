@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>css 연습 10 - 레이아웃(배치)</title>
+    <style>
+      /*float, 콘텐츠 흐름 테스트*/
+      .box{
+        width:300px;
+        height:200px;
+        background:lightskyblue;
+        opacity: 0.5;
+        margin:50px;
+      }
+      .box2{
+        width:300px;
+        height:200px;
+        background:lightskyblue;
+        opacity: 0.5;
+      }
+
+      .layout {
+        padding:20px;
+        background:#ddd;
+        /*height:200px;*/
+        border:5px solid red;
+        /*overflow:hidden;*/
+      }
+      .layout2 {
+        padding:20px;
+        background:#ddd;
+        /*height:200px;*/
+        border:2px solid red;
+      }
+      .float-1 {
+        /*height:100px;*/
+        float:left;
+      }
+      .float-2 {
+        float:right;
+        }
+      .paragraph {
+        background:greenyellow;
+      }
+      .paragraph2 {
+        margin-top:50px;
+        background:greenyellow;
+      }
+      .clear-both {
+        clear:both;
+      }
+    /*가상 요소를 사용해서 float을 해제하는 방식*/
+    /*가상 요소는 자식의 세로길이 값을 인지해야하는 부모요소에 적용*/
+    /*가상 요소는 인라인 요소*/
+      .clearfix:after {
+        content:"";
+        padding:1px;
+        /*가상엘리먼트의 위치를 표시하기위해 padding 1px을 주었습니다. 실제 사용할때는 padding를 지워주시면 됩니다.*/
+        background:#000;
+        display:block;
+        clear:both;
+      }
+
+
+      .margin {
+        margin:20px;
+      }
+
+      .margin-top {
+        margin-top:100px;
+      }
+      .layout>p {
+        background:red;
+      }
+      .layout2::after {
+        clear:both;
+      }
+      .float-none {
+        float:none;
+      }
+        /*가상 요소를 사용하여 float 해제하는 옳바른 방식*/
+        /*가상요소는 자식의 세로길이 값을 인지해야 하는 부모요소에 적요요한다.*/
+
+
+      }
+    </style>
+    <style></style>
+  </head>
+  <body>
+    <p>
+      box 크기, 배치는 부모 요소를 기준으로 함.
+    </p>
+    <p>
+      블록요소 box의 가로길이, 세로길이를 지정하지 않았을때, <br>
+      box의 가로길이는 부모요소를 기준으로 100% 채워지는 크기가 기본크기 <br>
+      box의 세로길이는 콘텐츠를 기준으로 콘텐트 양만큼 크기가 기본크기
+    </p>
+    <p>
+      인라인 요소 box의 가로길이, 세로길이를 지정하지 않았을때, <br>
+      box의 가로길이, 세로길이는 콘텐츠를 기준으로 콘텐츠양만큼의 크기가 기본크기가 된다.
+    </p>
+    <span>인라인박스</span>
+    <div class="layout">
+
+      <div class="margin box float-1">box1</div>
+      <div class="margin box float-2">box2</div>
+      <div class="paragraph">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione odit deserunt neque dolorum doloribus impedit tenetur deleniti, nam rerum. A cupiditate vel nisi eos, eaque ducimus et, voluptate magnam magni.</span>
+      </div>
+    </div>
+
+<br /><br /><br />
+
+<div class="layout">
+
+  <div class="box float-1">box</div>
+  <div class="box float-2">box</div>
+  <div class="paragraph clear-both">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus dolores dolorum eum eveniet illo, itaque, labore magni molestiae molestias nobis praesentium quae quasi rerum sequi tempora totam veritatis voluptates?
+  </div>
+
+</div>
+
+<br /><br /><br />
+
+<div class="layout">
+  <div class="clearfix">
+    <div class="box2 float-1">box</div>
+    <div class="box2 float-2">box</div>
+  </div>
+  <div class="paragraph3">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur delectus dolores dolorum eum eveniet illo, itaque, labore magni molestiae molestias nobis praesentium quae quasi rerum sequi tempora totam veritatis voluptates?
+  </div>
+</div>
+
+
+<div class="clear-both">
+  <span>float left x 2</span>
+  <div class="layout">
+    <div class="margin box float-1">
+      <p>box1</p>
+    </div>
+    <div class="margin box float-1">
+      <p>box2</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, exercitationem. Suscipit blanditiis nemo hic eum, error, voluptatem nostrum ratione ut illum quod quos nihil similique sequi, tenetur labore, quia nulla!</p>
+    </div>
+    <div class="paragraph"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione odit deserunt neque dolorum doloribus impedit tenetur deleniti, nam rerum. A cupiditate vel nisi eos, eaque ducimus et, voluptate magnam magni.</span>
+      <span>Reprehenderit ullam eius numquam nemo qui nisi quae provident assumenda? Corporis atque, facilis ratione totam enim laboriosam commodi tenetur facere sequi, voluptates eaque amet. Enim architecto temporibus doloremque perspiciatis sequi.</span>
+      <span>In explicabo non nihil facere aperiam minus corporis sunt amet nesciunt qui voluptates, velit quo expedita cumque libero optio ut. Dolorum pariatur minima, quo, alias ea rerum commodi. Iste, saepe?</span>
+    </div>
+  </div>
+</div>
+
+<br /><br /><br />
+
+<div class="clear-both">
+  <span>clear-both</span>
+  <div class="layout">
+    <div class="margin box float-1">
+      <p>box1</p>
+    </div>
+    <div class="margin box float-1">
+      <p>box2</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, exercitationem. Suscipit blanditiis nemo hic eum, error, voluptatem nostrum ratione ut illum quod quos nihil similique sequi, tenetur labore, quia nulla!</p>
+    </div>
+    <div class="paragraph clear-both margin-top"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione odit deserunt neque dolorum doloribus impedit tenetur deleniti, nam rerum. A cupiditate vel nisi eos, eaque ducimus et, voluptate magnam magni.</span>
+      <span>Reprehenderit ullam eius numquam nemo qui nisi quae provident assumenda? Corporis atque, facilis ratione totam enim laboriosam commodi tenetur facere sequi, voluptates eaque amet. Enim architecto temporibus doloremque perspiciatis sequi.</span>
+      <span>In explicabo non nihil facere aperiam minus corporis sunt amet nesciunt qui voluptates, velit quo expedita cumque libero optio ut. Dolorum pariatur minima, quo, alias ea rerum commodi. Iste, saepe?</span>
+    </div>
+  </div>
+</div>
+
+<br /><br /><br />
+
+<div>
+  <span> clear-both 했을 경우 paragraph class 부분 블럭의 margin-top이 겹침 현상이 일어난다.</span>
+  <div class="layout">
+    <div class="box float-1">
+      <p>box1</p>
+    </div>
+    <div class="box float-1">
+      <p>box2</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, exercitationem. Suscipit blanditiis nemo hic eum, error, voluptatem nostrum ratione ut illum quod quos nihil similique sequi, tenetur labore, quia nulla!</p>
+    </div>
+    <div class="paragraph2 margin-top clear-both"><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione odit deserunt neque dolorum doloribus impedit tenetur deleniti, nam rerum. A cupiditate vel nisi eos, eaque ducimus et, voluptate magnam magni.</span>
+      <span>Reprehenderit ullam eius numquam nemo qui nisi quae provident assumenda? Corporis atque, facilis ratione totam enim laboriosam commodi tenetur facere sequi, voluptates eaque amet. Enim architecto temporibus doloremque perspiciatis sequi.</span>
+      <span>In explicabo non nihil facere aperiam minus corporis sunt amet nesciunt qui voluptates, velit quo expedita cumque libero optio ut. Dolorum pariatur minima, quo, alias ea rerum commodi. Iste, saepe?</span>
+      <span>Nobis corporis autem consectetur, natus molestiae aut velit repudiandae quo consequuntur dolorem, hic architecto assumenda animi ut quas suscipit dicta fuga! Ad quis incidunt provident culpa consequatur tempore, eos doloremque.</span>
+      <span>Facilis maiores, eum mollitia culpa, exercitationem officiis fugiat doloremque, minus placeat, dolores unde. Excepturi tempora eaque, quidem, optio, non laboriosam aut, maxime quos velit sequi culpa ut. Eligendi, cumque quae!</span>
+    <!-- margin-top이 적용되지 않는다. -->
+    </div>
+  </div>
+
+<br /><br /><br />
+
+<div>
+  <span> clear-both 했을 경우 paragraph class 부분 블럭의 margin-top이 겹침 현상이 일어난다.</span>
+</div>
+<div class="layout">
+  <div class="clearfix ">
+    <div class="box float-1">
+      <p>box1</p>
+    </div>
+    <div class="box float-1">
+      <p>box2</p>
+    </div>
+  </div>
+    <div class="paragraph2 margin-top" ><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione odit deserunt neque dolorum doloribus impedit tenetur deleniti, nam rerum. A cupiditate vel nisi eos, eaque ducimus et, voluptate magnam magni.</span>
+      <span>Reprehenderit ullam eius numquam nemo qui nisi quae provident assumenda? Corporis atque, facilis ratione totam enim laboriosam commodi tenetur facere sequi, voluptates eaque amet. Enim architecto temporibus doloremque perspiciatis sequi.</span>
+      <span>In explicabo non nihil facere aperiam minus corporis sunt amet nesciunt qui voluptates, velit quo expedita cumque libero optio ut. Dolorum pariatur minima, quo, alias ea rerum commodi. Iste, saepe?</span>
+    </div>
+  </div>
+
+<br /><br /><br />
+
+    <div>
+      <span>float-float로 대응 경우 layout의 폭이 블럭의성질을 잃고 자식 컨텐츠 폭으로 좁혀진다.</span>
+    </div>
+
+    <div class="layout float-1" style="width:vw;">
+      <div class="box float-1">
+        <p>box1</p>
+      </div>
+      <div class="box float-1">
+        <p>box2</p>
+      </div>
+    </div>
+
+    <div class="layout float-2">
+      <div class="paragraph2 margin-top clear-both" ><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione odit deserunt neque dolorum doloribus impedit tenetur deleniti, nam rerum. A cupiditate vel nisi eos, eaque ducimus et, voluptate magnam magni.</span>
+        <span>Reprehenderit ullam eius numquam nemo qui nisi quae provident assumenda? Corporis atque, facilis ratione totam enim laboriosam commodi tenetur facere sequi, voluptates eaque amet. Enim architecto temporibus doloremque perspiciatis sequi.</span>
+        <span>In explicabo non nihil facere aperiam minus corporis sunt amet nesciunt qui voluptates, velit quo expedita cumque libero optio ut. Dolorum pariatur minima, quo, alias ea rerum commodi. Iste, saepe?</span>
+      </div>
+    </div>
+
+<br /><br /><br />
+
+    <div style="clear:both">
+      <p>float에 overflow 속성으로 대응하는 방법</p>
+      <p>자식 엘리먼트의 높이를 부모에게 반영하는 방법으로 부모 엘리먼트에 overflow:auto 또는 overflow:hidden 속성을 부여하는 방법이 있습니다. overflow:auto 속성은 자식의 너비가 가변적이고 부모의 너비보다 커지는 상황이 발생할 때 가로 스크롤바를 유발하기 때문에 일반적으로 권장하는 방식이 아닙니다. overflow:hidden 속성은 그러한 상황에서 가로 스크롤바를 유발하지는 않지만 자식의 너비가 넘치는 경우 넘치는 부분이 잘리기 때문에 이 역시 완전하게 안전한 방법은 아닙니다.</p>
+    </div>
+
+    <div class="layout" style="overflow:hidden;">
+      <div class="box float-1">
+        <p>box1</p>
+      </div>
+      <div class="box float-1">
+        <p>box2</p>
+      </div>
+    </div>
+
+    <div class="layout clear-both">
+      <div class="paragraph2 margin-top" ><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione odit deserunt neque dolorum doloribus impedit tenetur deleniti, nam rerum. A cupiditate vel nisi eos, eaque ducimus et, voluptate magnam magni.</span>
+        <span>Reprehenderit ullam eius numquam nemo qui nisi quae provident assumenda? Corporis atque, facilis ratione totam enim laboriosam commodi tenetur facere sequi, voluptates eaque amet. Enim architecto temporibus doloremque perspiciatis sequi.</span>
+        <span>In explicabo non nihil facere aperiam minus corporis sunt amet nesciunt qui voluptates, velit quo expedita cumque libero optio ut. Dolorum pariatur minima, quo, alias ea rerum commodi. Iste, saepe?</span>
+      </div>
+    </div>
+
+<br /><br /><br />
+
+    <div style="clear:both">
+      <p>float을 빈 엘리먼트로 clear 하는 방법</p>
+      <p>이 방법은 #container 영역이 끝나기 직전 빈 엘리먼트를 넣고 빈 엘리먼트에 clear:both 속성을 부여하여 부모가 자식의 높이를 인식하도록 하는 방법입니다. 하지만 의미 없는 빈 엘리먼트를 사용하기 때문에 이 역시 권장되는 방법은 아닙니다. float을 빈 엘리먼트로 clear 하는 방법 예제. 예제에서는 .clear 라는 빈 엘리먼트를 가시적으로 보이도록 하였지만 실무에서는 보통 .clear {clear:both; height:0; overflow:hidden;} 처리하여 .clear 라는 빈 엘리먼트가 스스로 높이를 갖지 않도록 하고 보이지 않도록 처리 합니다.</p>
+    </div>
+
+    <div class="layout" style="float:none;">
+      <div class="box float-1">
+        <p>box1</p>
+      </div>
+      <div class="box float-2">
+        <p>box2</p>
+      </div>
+      <div style="clear:both;"></div> <!-- 의미없는 한줄을 넣어줘야 한다. -->
+    </div>
+
+    <div class="layout clear-both">
+      <div class="paragraph2 margin-top" ><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione odit deserunt neque dolorum doloribus impedit tenetur deleniti, nam rerum. A cupiditate vel nisi eos, eaque ducimus et, voluptate magnam magni.</span>
+        <span>Reprehenderit ullam eius numquam nemo qui nisi quae provident assumenda? Corporis atque, facilis ratione totam enim laboriosam commodi tenetur facere sequi, voluptates eaque amet. Enim architecto temporibus doloremque perspiciatis sequi.</span>
+        <span>In explicabo non nihil facere aperiam minus corporis sunt amet nesciunt qui voluptates, velit quo expedita cumque libero optio ut. Dolorum pariatur minima, quo, alias ea rerum commodi. Iste, saepe?</span>
+      </div>
+    </div>
+
+<br /><br /><br />
+
+    <div style="clear:both">
+      <p>float을 빈 엘리먼트로 clear 하는 방법</p>
+      <p>가장 탁월하다고 생각하는 방법 입니다. 우선 ‘가상 선택자‘라는 개념을 이해하셔야 하기 때문에 약간 상세히 설명드리겠습니다. 여러분들이 익히 알고 계시는 :link, :visited, :hover, :active, :focus는 모두 가상 선택자 입니다. ‘가상 선택자’는 다시 ‘가상 클래스‘와 ‘가상 엘리먼트‘로 구분할 수 있는데요. ‘가상 클래스‘는 특정 엘리먼트에 대하여 아무런 class를 부여하지 않았지만 마치 역동적으로 class를 변경한것과 같은 효과를 낼 수 있는 것들로서 이미 존재하는 엘리먼트에 조합해서 사용할 수 있습니다.  :link, :visited, :hover, :active, :focus, :first-child가 가상 클래스에 해당됩니다. 한편 ‘가상 엘리먼트‘란, 존재하지 않는 엘리먼트를 가상으로 생성해내는 선택자로서 :first-line, :first-letter, :before, :after가 있습니다. 심지어 :before와 :after는 HTML문서상에 존재하지 않는 콘텐츠를 출력시키기도 합니다.  Hello World Collection이라는 웹 사이트에 신현석님이 ‘Hello World’라는 메시지를 어떻게 출력했는지 살펴보시면 재미있고 이해하기도 쉽죠. 이렇게 가상의 엘리먼트를 생성 #container:after {content:" "} 시킨 다음 display:block; clear:both 처리를 추가하게 되면 의미 없는 빈 엘리먼트를 사용하지 않으면서도 가상 엘리먼트를 이용하여 깔끔하게 float이 clear됩니다. </p>
+    </div>
+
+    <div class="layout clearfix">
+      <div class="box float-1">
+        <p>box1</p>
+      </div>
+      <div class="box float-1">
+        <p>box2</p>
+      </div>
+    </div>
+
+    <div class="layout clear-both">
+      <div class="paragraph2 margin-top" ><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione odit deserunt neque dolorum doloribus impedit tenetur deleniti, nam rerum. A cupiditate vel nisi eos, eaque ducimus et, voluptate magnam magni.</span>
+        <span>Reprehenderit ullam eius numquam nemo qui nisi quae provident assumenda? Corporis atque, facilis ratione totam enim laboriosam commodi tenetur facere sequi, voluptates eaque amet. Enim architecto temporibus doloremque perspiciatis sequi.</span>
+        <span>In explicabo non nihil facere aperiam minus corporis sunt amet nesciunt qui voluptates, velit quo expedita cumque libero optio ut. Dolorum pariatur minima, quo, alias ea rerum commodi. Iste, saepe?</span>
+      </div>
+    </div>
+
+
+  </body>
+</html>

@@ -1,239 +1,247 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title></title>
+  <meta charset="UTF-8">
+  <title>HTML 연습 10</title>
 </head>
 <body>
-<!--2x2-->
-<h1>2x2 표 만들기</h1>
+
+<!--표 : 행×열( html : 행×칸 )-->
+
+<!--1×1 표-->
 <table border="1">
-    <tr>
-        <td>1,1</td>
-        <td>1,2</td>
-    </tr>
-    <tr>
-        <td>2,1</td>
-        <td>2,2</td>
-    </tr>
+  <tr>
+    <td>1×1 표</td>
+  </tr>
 </table>
 
-<!--2x4-->
-<h1>2x4 표 만들기</h1>
+<!--2×2 표-->
 <table border="1">
-
-    <tr>
-        <td>1,1</td>
-        <td>1,2</td>
-        <td>1,3</td>
-        <td>1,4</td>
-    </tr>
-
-    <tr>
-        <td>2,1</td>
-        <td>2,2</td>
-        <td>2,3</td>
-        <td>2,4</td>
-    </tr>
+  <tr>
+    <td>1,1</td>
+    <td>2,1</td>
+  </tr>
+  <tr>
+    <td>1,2</td>
+    <td>2,2</td>
+  </tr>
 </table>
 
-<!--성적표-->
-<h1>성적표</h1>
-<table border="1" style=text-align:center;">
-    <caption>성적표</caption>
-    <colgroup>
-        <col style="width:100px;">
-        <col style="width:100px;">
-        <col style="width:100px;">
-        <col style="width:100px;">
-    </colgroup>
-    <thead>
-        <tr>
-            <th scope="col"></th>
-            <th scope="col">국어</th>
-            <th scope="col">영어</th>
-            <th scope="col">수학</th>
-        </tr>
-    </thead>
-    <tfoot>
-        <tr>
-            <th scope="row">합계</th>
-            <td>50</td>
-            <td>65</td>
-            <td>130</td>
-        </tr>
-    </tfoot>
-    <tbody>
-        <tr>
-            <th scope="row">영희</th>
-            <td>20</td>
-            <td>50</td>
-            <td>70</td>
-        </tr>
-        <tr>
-            <th scope="row">민수</th>
-            <td>30</td>
-            <td>15</td>
-            <td>60</td>
-        </tr>
-    </tbody>
+<!--2×4 표-->
+<table border="1">
+  <tr>
+    <td>1,1</td>
+    <td>2,1</td>
+    <td>3,1</td>
+    <td>4,1</td>
+  </tr>
+  <tr>
+    <td>1,2</td>
+    <td>2,2</td>
+    <td>3,2</td>
+    <td>4,2</td>
+  </tr>
 </table>
 
+<!--성적표( 4×4 )-->
 
 <table border="1">
+
+  <caption>과목별 합계 성적표</caption>
+
+  <colgroup>
+    <col style="width:100px" />
+    <col style="width:100px" />
+    <col style="width:100px" />
+    <col style="width:100px" />
+  </colgroup>
+
+  <thead>
     <tr>
-        <td rowspan="2">1,1</td>
-        <td >2,1</td>
+      <th scope="col"></th>
+      <th scope="col">국어</th>
+      <th scope="col">영어</th>
+      <th scope="col">수학</th>
+    </tr>
+  </thead>
+
+  <tfoot>
+  <tr>
+    <th scope="row">과목별합계</th>
+    <td>140</td>
+    <td>140</td>
+    <td>140</td>
+  </tr>
+  </tfoot>
+
+  <tbody>
+    <tr>
+      <th scope="row">영희</th>
+      <td>90</td>
+      <td>90</td>
+      <td>90</td>
     </tr>
     <tr>
-        <td>2,2</td>
-        <td>2,3</td>
+      <th scope="row">민수</th>
+      <td>50</td>
+      <td>50</td>
+      <td>50</td>
     </tr>
+  </tbody>
+
 </table>
-<br><br>
-<!--시간표-->
+
+<!--병합표-->
 <table border="1">
-    <caption>확정 모듈</caption>
-    <colgroup>
-        <col style="width:50px;">
-        <col style="width:50px;">
-        <col style="width:100px;">
-        <col style="width:80px;">
-        <col style="width:80px;">
-        <col style="width:80px;">
-        <col style="width:80px;">
-        <col style="width:80px;">
-    </colgroup>
-    <thead>
-    <tr style="color: #000000">
-        <th width="56" style="text-align: center" scope="col"><p>50분</p>
-            <p>(교시)</p></th>
-        <th width="56" style="text-align: center" scope="col"><p>75분</p>
-            <p>(교시)</p></th>
-        <th width="80" style="text-align: center" scope="col">시간</th>
-        <th width="80" style="text-align: center" scope="col">월</th>
-        <th width="80" style="text-align: center" scope="col">화</th>
-        <th width="80" style="text-align: center" scope="col">수</th>
-        <th width="80" style="text-align: center" scope="col">목</th>
-        <th width="80" style="text-align: center" scope="col">금</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <th width="56" rowspan="2" style="text-align: center" scope="row">1</th>
-        <td width="56" rowspan="3" style="text-align: center">1</td>
-        <td width="80" style="text-align: center">09:00-09:30</td>
-        <td width="80" rowspan="2" style="text-align: center">A</td>
-        <td width="80" rowspan="3" style="text-align: center">I</td>
-        <td width="80" rowspan="2" style="text-align: center">A</td>
-        <td width="80" rowspan="3" style="text-align: center">I</td>
-        <td width="80" rowspan="2" style="text-align: center">E</td>
-    </tr>
-    <tr>
-        <td width="80" style="text-align: center">09:30-10:00</td>
-    </tr>
-    <tr>
-        <th width="56" rowspan="2" style="text-align: center" scope="row">2</th>
-        <td width="80" style="text-align: center">10:00-10:30</td>
-        <td width="80" rowspan="2" style="text-align: center">A</td>
-        <td width="80" rowspan="2" style="text-align: center">E</td>
-        <td width="80" rowspan="2" style="text-align: center">E</td>
-    </tr>
-    <tr>
-        <td width="56" rowspan="3" style="text-align: center">2</td>
-        <td width="80" style="text-align: center">10:30-11:00</td>
-        <td width="80" rowspan="3" style="text-align: center">J</td>
-        <td width="80" rowspan="3" style="text-align: center">J</td>
-    </tr>
-    <tr>
-        <th width="56" rowspan="2" style="text-align: center" scope="row">3</th>
-        <td width="80" style="text-align: center">11:00-11:30</td>
-        <td width="80" rowspan="2" style="text-align: center">B</td>
-        <td width="80" rowspan="2" style="text-align: center">B</td>
-        <td width="80" rowspan="2" style="text-align: center">F</td>
-    </tr>
-    <tr>
-        <td width="80" style="text-align: center">&nbsp;</td>
-    </tr>
-    <tr>
-        <th width="56" rowspan="2" style="text-align: center" scope="row">4</th>
-        <td width="56" rowspan="3" style="text-align: center">3</td>
-        <td width="80" style="text-align: center">&nbsp;</td>
-        <td width="80" rowspan="2" style="text-align: center">B</td>
-        <td width="80" rowspan="3" style="text-align: center">K</td>
-        <td width="80" rowspan="2" style="text-align: center">F</td>
-        <td width="80" rowspan="3" style="text-align: center">K</td>
-        <td width="80" rowspan="2" style="text-align: center">F</td>
-    </tr>
-    <tr>
-        <td width="80" style="text-align: center">&nbsp;</td>
-    </tr>
-    <tr>
-        <th width="56" rowspan="2" style="text-align: center" scope="row">5</th>
-        <td width="80" style="text-align: center">&nbsp;</td>
-        <td width="80" rowspan="2" style="text-align: center">C</td>
-        <td width="80" rowspan="2" style="text-align: center">C</td>
-        <td width="80" rowspan="2" style="text-align: center">G</td>
-    </tr>
-    <tr>
-        <td width="56" rowspan="3" style="text-align: center">4</td>
-        <td width="80" style="text-align: center">&nbsp;</td>
-        <td width="80" rowspan="3" style="text-align: center">L</td>
-        <td width="80" rowspan="3" style="text-align: center">L</td>
-    </tr>
-    <tr>
-        <th width="56" rowspan="2" style="text-align: center" scope="row">6</th>
-        <td width="80" style="text-align: center">&nbsp;</td>
-        <td width="80" rowspan="2" style="text-align: center">C</td>
-        <td width="80" rowspan="2" style="text-align: center">G</td>
-        <td width="80" rowspan="2" style="text-align: center">G</td>
-    </tr>
-    <tr>
-        <td width="80" style="text-align: center">&nbsp;</td>
-    </tr>
-    <tr>
-        <th width="56" rowspan="2" style="text-align: center" scope="row">7</th>
-        <td width="56" rowspan="3" style="text-align: center">5</td>
-        <td width="80" style="text-align: center">&nbsp;</td>
-        <td width="80" rowspan="2" style="text-align: center">D</td>
-        <td width="80" rowspan="3" style="text-align: center">M</td>
-        <td width="80" rowspan="2" style="text-align: center">D</td>
-        <td width="80" rowspan="3" style="text-align: center">M</td>
-        <td width="80" rowspan="2" style="text-align: center">자율</td>
-    </tr>
-    <tr>
-        <td width="80" style="text-align: center">&nbsp;</td>
-    </tr>
-    <tr>
-        <th width="56" rowspan="2" style="text-align: center" scope="row">8</th>
-        <td width="80" style="text-align: center">&nbsp;</td>
-        <td width="80" rowspan="2" style="text-align: center">D</td>
-        <td width="80" rowspan="2" style="text-align: center">H</td>
-        <td width="80" rowspan="2" style="text-align: center">자율</td>
-    </tr>
-    <tr>
-        <td width="56" rowspan="3" style="text-align: center">6</td>
-        <td width="80" style="text-align: center">&nbsp;</td>
-        <td width="80" rowspan="3" style="text-align: center">N</td>
-        <td width="80" rowspan="3" style="text-align: center">N</td>
-    </tr>
-    <tr>
-        <th width="56" rowspan="2" style="text-align: center" scope="row">9</th>
-        <td width="80" style="text-align: center">&nbsp;</td>
-        <td width="80" rowspan="2" style="text-align: center">H</td>
-        <td width="80" rowspan="2" style="text-align: center">H</td>
-        <td width="80" rowspan="2" style="text-align: center">자율</td>
-    </tr>
-    <tr>
-        <td width="80" style="text-align: center">&nbsp;</td>
-    </tr>
-    </tbody>
+  <tr>
+    <td rowspan="2">1,1</td>
+    <td colspan="2">2,1</td>
+    <!--<td>3,1</td> : (2,1)칸에서 2칸짜리로 늘렸기 때문에 필요 없음-->
+  </tr>
+  <tr>
+    <!--<td>2,1</td> : (1,1)칸에서 2칸짜리로 늘렸기 때문에 필요 없음-->
+    <td>2,2</td>
+    <td>3,2</td>
+  </tr>
 </table>
 
+<!--드림위버 작성표-->
 
-
-
-
+<table border="1" summary="확정된 시간표 모듈">
+  <caption>확정 모듈</caption>
+  <colgroup>
+    <col style="width:50px" />
+    <col style="width:50px" />
+    <col style="width:100px" />
+    <col style="width:100px" />
+    <col style="width:100px" />
+    <col style="width:100px" />
+    <col style="width:100px" />
+    <col style="width:100px" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th scope="col"><p>50분</p><p>(교시)</p></th>
+      <th scope="col"><p>75분</p><p>(교시)</p></th>
+      <th scope="col">시간</th>
+      <th scope="col">월</th>
+      <th scope="col">화</th>
+      <th scope="col">수</th>
+      <th scope="col">목</th>
+      <th scope="col">금</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2">1</td>
+      <td rowspan="3">1</td>
+      <td>09:00-09:30</td>
+      <td rowspan="2"> A</td>
+      <td rowspan="3">I</td>
+      <td rowspan="2">A</td>
+      <td rowspan="3">I</td>
+      <td rowspan="2">E</td>
+    </tr>
+    <tr>
+      <td>09:30-10:00</td>
+    </tr>
+    <tr>
+      <td rowspan="2">2</td>
+      <td>10:00-10:30</td>
+      <td rowspan="2">A</td>
+      <td rowspan="2">E</td>
+      <td rowspan="2">E</td>
+    </tr>
+    <tr>
+      <td rowspan="3">2</td>
+      <td>10:30-11:00</td>
+      <td rowspan="3">J</td>
+      <td rowspan="3">J</td>
+    </tr>
+    <tr>
+      <td rowspan="2">3</td>
+      <td>11:00-11:30</td>
+      <td rowspan="2">B</td>
+      <td rowspan="2">B</td>
+      <td rowspan="2">F</td>
+    </tr>
+    <tr>
+      <td>11:30-12:00</td>
+    </tr>
+    <tr>
+      <td rowspan="2">4</td>
+      <td rowspan="3">3</td>
+      <td>12:00-12:30</td>
+      <td rowspan="2">B</td>
+      <td rowspan="3">K</td>
+      <td rowspan="2">F</td>
+      <td rowspan="3">K</td>
+      <td rowspan="2">F</td>
+    </tr>
+    <tr>
+      <td>12:30-13:00</td>
+    </tr>
+    <tr>
+      <td rowspan="2">5</td>
+      <td>13:00-13:30</td>
+      <td rowspan="2">C</td>
+      <td rowspan="2">C</td>
+      <td rowspan="2">G</td>
+    </tr>
+    <tr>
+      <td rowspan="3">4</td>
+      <td>13:30-14:00</td>
+      <td rowspan="3">L</td>
+      <td rowspan="3">L</td>
+    </tr>
+    <tr>
+      <td rowspan="2">6</td>
+      <td>14:00-14:30</td>
+      <td rowspan="2">C</td>
+      <td rowspan="2">G</td>
+      <td rowspan="2">G</td>
+    </tr>
+    <tr>
+      <td>14:30-15:00</td>
+    </tr>
+    <tr>
+      <td rowspan="2">7</td>
+      <td rowspan="3">5</td>
+      <td>15:00-15:30</td>
+      <td rowspan="2">D</td>
+      <td rowspan="3">M</td>
+      <td rowspan="2">D</td>
+      <td rowspan="3">M</td>
+      <td rowspan="2">자율</td>
+    </tr>
+    <tr>
+      <td>15:30-16:00</td>
+    </tr>
+    <tr>
+      <td rowspan="2">8</td>
+      <td>16:00-16:30</td>
+      <td rowspan="2">D</td>
+      <td rowspan="2">H</td>
+      <td rowspan="2">자율</td>
+    </tr>
+    <tr>
+      <td rowspan="3">6</td>
+      <td>16:30-17:00</td>
+      <td rowspan="3">N</td>
+      <td rowspan="3">N</td>
+    </tr>
+    <tr>
+      <td rowspan="2">9</td>
+      <td>17:00-17:30</td>
+      <td rowspan="2">H</td>
+      <td rowspan="2">H</td>
+      <td rowspan="2">자율</td>
+    </tr>
+    <tr>
+      <td>17:30-18:00</td>
+    </tr>
+  </tbody>
+</table>
 
 </body>
 </html>
