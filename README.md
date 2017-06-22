@@ -31,7 +31,7 @@ Tutorial 연습 소스
 - [02_css_ex_06.html](https://github.com/Drawcd/tutorial/blob/master/02_css_ex_06(font_style).html) : 폰트 스타일
 - [02_css_ex_07.html](https://github.com/Drawcd/tutorial/blob/master/02_css_ex_07(단락).html) : 단락 스타일
 - [02_css_ex_08.html](https://github.com/Drawcd/tutorial/blob/master/02_css_ex_08(background).html) : 배경 스타일
-- [02_css_ex_09.html](https://github.com/Drawcd/tutorial/blob/master/02_css_ex_09(box css).html) : 박스 모델
+- [02_css_ex_09.html](https://github.com/Drawcd/tutorial/blob/master/02_css_ex_09(box_css).html) : 박스 모델
 - [02_css_ex_10.html](https://github.com/Drawcd/tutorial/blob/master/02_css_ex_10(float).html) : 레이아웃 - float
 - [02_css_ex_11.html](https://github.com/Drawcd/tutorial/blob/master/02_css_ex_11(inliae_block).html) : 블럭요소 / 인라인 요소의 박스모델 CSS 적용 차이점
 - [02_css_ex_12.html](https://github.com/Drawcd/tutorial/blob/master/02_css_ex_12(position).html) : position
