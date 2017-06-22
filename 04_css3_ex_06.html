@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>css 전환</title>
+
+    <style>
+      .box {
+        width:100px;
+        height:100px;
+        background:palevioletred;
+        transition:background 1s, transform 1s ;
+        /*transition:all 1s;*/
+      }
+      .box1:hover {
+        background:deepskyblue;
+      }
+      .box2:hover {
+        transform:translate(100px, 100px);
+      }
+
+      .box3:hover {
+        transform:rotate(360deg);
+      }
+
+      .box4:hover {
+        transform:scale(1.5, 1.5);
+      }
+
+      body>div:nth-child(1):active ~ .box {
+        background:#ffcc00;
+      }
+
+    </style>
+
+  </head>
+  <body>
+
+    <div class="box box1" title="test2">박스1</div>
+
+    <div class="box box2">박스2</div>
+
+    <div class="box box3">박스3</div>
+
+    <div class="box box4">박스4</div>
+
+
+    <button class="test">test</button>
+  </body>
+</html>

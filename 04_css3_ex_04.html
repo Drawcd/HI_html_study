@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>사용자 지정폰트</title>
+
+    <style>
+    @font-face{
+    font-family:ns;
+
+    src:url(fonts/noto_sans_regular.eot?#iefix) format('embedded-opentype'); /* IE 6~8 */
+	  src:local(★), url(fonts/noto_sans_regular.woff) format("woff");
+    }
+
+    @font-face{
+    font-family:ng;
+    src:url(fonts/20db.eot?#iefix) format('embedded-opentype'); /* IE 6~8 */
+    src:local(※), url(fonts/20db.woff) format("woff")
+    }
+
+    p{
+      font-family: ns, sans-serif;
+    }
+    .ng {
+      font-family: ng, sans-serif;
+    }
+    .test:hover [title~=test2] {
+      color:#ffcc00;
+    }
+    </style>
+
+  </head>
+  <body>
+
+    <div>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate architecto eum assumenda, non culpa unde molestiae nisi accusamus tempora quo numquam exercitationem similique accusantium, dignissimos vel ab iusto deserunt odio!
+    </div>
+
+    <p title="test2">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate architecto eum assumenda, non culpa unde molestiae nisi accusamus tempora quo numquam exercitationem similique accusantium, dignissimos vel ab iusto deserunt odio!
+    </p>
+
+    <p class="ng">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate architecto eum assumenda, non culpa unde molestiae nisi accusamus tempora quo numquam exercitationem similique accusantium, dignissimos vel ab iusto deserunt odio!
+    </p>
+
+    <button class="test">test</button>
+
+  </body>
+</html>
