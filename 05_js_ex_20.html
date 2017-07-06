@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Attribute(HTML 속성) 제어하기</title>
+
+    <style>
+    .box{
+      width:100px;
+      height:100px;
+      background:mediumvioletred;
+    }
+    .active{
+      width:300px;
+    }
+    .depth2{
+      display:none;
+    }
+    .depth2.active{
+      display:block;
+    }
+
+    </style>
+    <script src="lib/jquery-3.2.1.min.js"></script>
+    <script>
+
+
+// 클래스 추가 / 삭제
+      $(function(){
+        $('.box1').addClass('active');
+        $('.box2').removeClass('box');
+        var $menu = $('.depth1-link');
+        var $depth2 = $('.depth2');
+
+        // function test(){
+        //   console.log(1);
+        // }
+
+        // 방법 1
+        // function test(){
+        //   $('depth2').addClass('active');
+        // };
+        // $menu.on('mouseenter',test(){
+        // });
+
+        //방법2
+        $menu.on('mouseenter',function(){
+          $depth2.addClass('active');
+        });
+
+        $menu.on('mouseleave', function(){
+          $depth2.removeClass('active');
+        });
+
+
+//  HTML 속성 제어
+        //방법1 마우스 커서 올렸을때 이미지 변환
+        $('.image').on('mouseenter', function(){
+          $('.image').attr('src', 'images/5-2.jpg');
+        });
+        $('.image').on('mouseleave', function(){
+          $('.image').attr('src', 'images/5-1.jpg');
+        });
+        //방법2 처음부터 이미지 변환
+        // $('.image').attr('src', 'images/5-2.jpg');
+        var $image = $('.image');
+        $image.attr('alt','클림트의 그림');
+        // $image.attr('src','images/5-2.jpg');
+
+
+        var $image2 = $('.image2')
+        $image2.removeAttr('alt');
+        $image2.removeAttr('class');
+
+
+
+      });
+// 이벤트 함수 ~~했을때 on('mouseenter,  ')
+    </script>
+
+  </head>
+  <body>
+
+    <pre>
+
+    Attribute 제어하기
+    1. 클래스 추가/삭제
+      - 추가 : addClass() 함수
+        http://api.jquery.com/addClass/
+      - 삭제 : removeClass() 함수
+        http://api.jquery.com/removeClass/
+
+    2. HTML 속성 제어
+      - 추가/변경 : attr() 함수
+        http://api.jquery.com/attr/
+        예) $('box1').css('width','300'); class가 box1인 요소의 가로길이를 300px로 지정해라
+        예) $('box1').css('width'); class가 box1인 요소의 가로기리이를 읽어 들여라
+
+      - 삭제 : removeAttr() 함수
+        http://api.jquery.com/removeAttr/
+
+      ** prop() : HTML 속성 중 정보가 아닌 상태를 다루는 속성 제어할때 사용한다.
+      http://api.jquery.com/prop/
+      예) input tag중 readonly, checked, disabled
+
+    </pre>
+<!-- 클래스 추가 / 삭제 -->
+    <div class="box box1">box1</div>
+    <div class="box box2">box2</div>
+    <ul class="depth1">
+      <li class="depth1-item">
+        <a class="depth1-link" href="">depth1</a>
+        <ul class="depth2">
+          <li class="depth2-item">
+            <a class="depth2-link" href="">depth2-1</a>
+          </li>
+          <li class="depth2-item">
+            <a class="depth2-link" href="">depth2-2</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+
+
+<!-- HTML 속성 제어 -->
+    <div>
+      <img src="images/5-1.jpg" class="image" >
+    </div>
+
+    <div>
+      <img src="images/6-1.jpg" class="image2" alt="test">
+    </div>
+
+  </body>
+</html>

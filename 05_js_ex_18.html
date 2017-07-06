@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DOM 노드 다루기</title>
+    <!--jQuery 라이브러리를 로컬에서 불러오기-->
+    <script src="lib/jquery-3.2.1.min.js"></script>
+    <script>
+      $(function(){
+
+        // 1. 노드 추가, 생성
+        //   1-1 append() 함수
+        $('.box1').append('<div>append 추가 노드</div>');
+
+        //   1-2 appendTo() 함수
+        $('<div>appendTo 추가 노드</div>').appendTo('.box2');
+
+        //   1-3 prepend() 함수
+
+        $('.box1').prepend('<div>prepend 추가 노드</div>');
+
+        //   1-4 prependTo() 함수
+        $('<div>prependTo 추가 노드</div>').prependTo('.box2');
+
+        // 2. 노드 삭제
+        //$('.box3>p').remove();  //class box3 의 자식요소 p 삭제
+        //$('.box3 p').remove();  //class box3 의 자식요소 p 삭제
+        // 함수를 사용하여 아래와 같이 할 수도 있도
+        $('.box3').children().remove();
+
+        // 3. 노드 수정/추가
+        // 3-1. html() 함수
+        // 태그포함 수정 수정할 내용이 없을때는 추가 된다.
+        $('.box4').html('<div>3-1수정된 내용</div>');
+
+        // 3-2. text() 함수
+        // 태그를 전체가 수정되지 않고 텍스트 값만 수정된다. 아래 예2 번 결과를 보면 태그(<div>)조차 문자로 인식된다.
+        $('.box5-1').text('5-1수정된 내용');
+        $('.box5-2').text('5-2<div>수정된 내용</div>');
+        $('.box6').html('<div>6수정된 내용</div>');
+
+      });
+
+
+    </script>
+
+  </head>
+  <body>
+
+    <pre>
+      DOM 노드 다루기
+      1. 노드 추가, 생성
+        1-1 append() 함수
+          - 대상의 뒷쪽에 노드를 추가
+        1-2 appendTo() 함수
+          - 대상의 뒷쪽에 노드를 추가
+        1-3 prepend() 함수
+          - 대상 앞쪽에 노드를 추가
+        1-4 prependTo() 함수
+          - 대상 앞쪽에 노드를 추가
+      2. 노드 삭제
+          - remove() 함수
+      3. 노드 내용 수정/추가
+        3-1. html() 함수
+        3-2. text() 함수
+
+
+    </pre>
+
+    <div class="box1">
+      <p>
+        1Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit unde mollitia, quas quisquam rerum. Quibusdam repellat obcaecati voluptatem hic autem dolorum deserunt, beatae eveniet, facilis, deleniti ad reprehenderit quidem perspiciatis!
+      </p>
+    </div>
+<hr>
+    <div class="box2">
+      <p>
+        2Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit unde mollitia, quas quisquam rerum. Quibusdam repellat obcaecati voluptatem hic autem dolorum deserunt, beatae eveniet, facilis, deleniti ad reprehenderit quidem perspiciatis!
+      </p>
+    </div>
+<hr>
+    <div class="box3">
+      <p>
+        3Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit unde mollitia, quas quisquam rerum. Quibusdam repellat obcaecati voluptatem hic autem dolorum deserunt, beatae eveniet, facilis, deleniti ad reprehenderit quidem perspiciatis!
+      </p>
+    </div>
+<hr>
+    <div class="box4">
+      <p>
+        4Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit unde mollitia, quas quisquam rerum. Quibusdam repellat obcaecati voluptatem hic autem dolorum deserunt, beatae eveniet, facilis, deleniti ad reprehenderit quidem perspiciatis!
+      </p>
+    </div>
+<hr>
+    <div class="box5-1">
+      <p>
+        5Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit unde mollitia, quas quisquam rerum. Quibusdam repellat obcaecati voluptatem hic autem dolorum deserunt, beatae eveniet, facilis, deleniti ad reprehenderit quidem perspiciatis!
+      </p>
+    </div>
+    <div class="box5-2">
+      <p>
+        5Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit unde mollitia, quas quisquam rerum. Quibusdam repellat obcaecati voluptatem hic autem dolorum deserunt, beatae eveniet, facilis, deleniti ad reprehenderit quidem perspiciatis!
+      </p>
+    </div>
+<hr>
+    <div class="box6"></div>
+  </body>
+</html>

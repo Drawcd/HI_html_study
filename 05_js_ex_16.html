@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery 기본 사용법</title>
+    <!-- jquery 라이브러리 외부파일을 인터넷에서 CDN(Content Delivery Network)형식으로 불러오기 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+    <script>
+      $(function(){
+        // 위의 function은 예약어이다. 변수 선언할때 사용하는 var또한 예약어이다.
+        // 예약어는 vendor에서 지정해놓은 함수 이다.
+        // $()함수 안에 넣어주는 CSS 선택자의 모양과 같음
+        // Ex) function, var : 예약어 / 함수이름 / 변수 : 따옴표 묶지 않음
+        $('.box1').css({
+          //위의 css는 함수
+          width:100,
+          height: 100,
+          'background-color' : '#f00', // '-'이 사용되는 객체 이름은 ''로 묶어 주어야 함
+          //width나 height 경우 ''로 묶지 않았지만 background-color을 사용할때는 ''묶는 이유는 -(하이픈)때문에 하나의 문자로 인식하지 않기 때문이다. #f00 같은 경우도 같은 이유이다. #f 문자와 00 숫자가 묶여 있기때문에 수식으로 인식하지 않게 하기 위함이다.
+          // 위와 같이 jquery는 단위를 넣지 않기때문에 뒤에 수식이 들어 올수 있으며, 변수 함수등이 들어올 수 있다.
+          'font-size' : 30
+          //마지막의 객체 값에는 , 을 사용하지 않는다.
+          //background-color:rgb( 255,0,0); 의 rgb는 함수이다.
+        });
+      });
+
+    </script>
+    <style>
+      h3 {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+
+<pre>
+
+  <h3>1. jQuery 진입점</h3>
+
+    - jquery() = $()
+
+    - 함수의 인수(인자)를 기준으로 DOM 또는 HTML 문자열과 일치하는 요소(Element)의 컬렉션(객체와 비슷함)을 반환함.
+
+  <h3>2. jQuery 진입점(실행 시작점)</h3>
+
+    - $(document).ready(function(){실행구문});
+    <!-- document나 window 같은 경우는 ''를 사용하지 않는다.  -->
+    <!-- ready()함수는 dom의 진입점을 기다리게 하는 함수이다. -->
+    - $(function(){});
+
+    - 진입점(시작점) : DOM이 모두 로딩된 이후에 코드를 실행할 수 있게 함(이미지 로딩은 제외)
+
+    - DOM이 먼저 로딩이 완료 되고, 이후에 이미지 로딩이 완료됨.
+</pre>
+
+    <div class="box1">box1</div>
+
+
+
+    <pre>
+      <h3>웹페이지 요청 순서</h3>
+      1. local에서 server로 요청(request)
+      2. server에서 local로 응답(resporse) HTML CSS JS (DOM) 로딩
+      3. local에서 server로 로딩된 컨텐츠 파일들 요청 (WINDOW)
+      4. server에서 local로 이미지와 같은 컨텐츠 파일 제공
+    </pre>
+  </body>
+</html>

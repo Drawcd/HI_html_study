@@ -1,0 +1,25 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "2. CSS",
+  "main": "05_js_ex_01.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Drawcd/tutorial.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Drawcd/tutorial/issues"
+  },
+  "homepage": "https://github.com/Drawcd/tutorial#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}

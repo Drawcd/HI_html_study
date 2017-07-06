@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>DOM 노드 찾기</title>
+    <!--jQuery 라이브러리를 로컬에서 불러오기-->
+    <script src="lib/jquery-3.2.1.min.js"></script>
+    <script>
+      $(function(){
+      // 1.노드 찾기
+        console.log($('.box1'));
+        console.log($('.box1').length)
+      // 2. 자식 노드 찾기
+      // 2-1 CSS Selector 형태 사용하기
+        console.log($('.gnb-list>li'));
+        $('.gnb-list>li').css({
+          padding : 10,
+          border : '1px solid #f00' // 좌측의 경우처럼 축약 형식으로 작성할때 또한 ''로 묶어줘야 한다.
+        });
+      // 2-2. children() 함수 사용하기
+        console.log( $('.contents-list').children()); // children은 child의 복수형의 의미에 맞게 직계 자식 여러개 선택이 된다. 자손은 제외한다.
+
+
+      // 2-2 children() 함수 사용하기
+        $('.contents-list').children().css({   //jquery에서 함수를 연속으로 사용 - Method chaining이라 말한다.
+          padding : 10,
+          border : '1px solid #f00'
+          // children은 자식요소가 모두 선택되지만 자손들은 선택되지 않는다.
+        });
+
+        $('.contents-list').children('.selected').css({   // 자식 요소중 특정 클래스를 가진 요소만 매개변수 위치에 클래스명을 적용하여 제어 할 수도 있다.
+          'font-size' : 20
+        });
+
+      // 2-3. find() 함수 사용하기
+        console.log( $('.contents-list').find() );
+
+        $('.contents-list').find('li').css({
+          color : 'green',
+          background : 'yellow'
+        });
+
+      // 3. 특정 인덱스 번호로 찾기
+      // 3-1 eq() 함수 사용하는 방법
+        console.log( $('.box1').eq());
+
+        $('.box1').eq(1).css({
+          color : '#ffcc00',
+          'font-size' : 30,
+          background : 'yellow'  // 문자는 '' 안에 표기해야 한다.
+        });
+
+      // 3-2 eq() selector 사용하는 방법
+        console.log( $('.contents-list').find('li:eq(0)') );
+
+    //$('.contents-list').find('li:eq(0)').css({});     // <== eq 경우 표기
+        $('.contents-list').find('li:eq(0)').css({        // <== eq selector 경우 표기
+          'text-decoration' : 'line-through'
+        });
+
+      // ** 반복문과 같이 사용하기
+        console.log( $('.number-list').children() ); // 찾는 노드
+        console.log( $('.number-list').children().length ); // 찾은 노드 객체의 개수
+
+        for(var i=0; i<$('.number-list').children().length; i++){ // 정수를 대신하여 $('.number-list').children().length 를 사용할 경우 탄력적으로 객체수에 맞게 자동 실해애된다.
+          $('.number-list').children().eq(i).append(i+1);  // append는 끝에 ()를 추가해라
+        }
+
+      // 4. 부모 노드 찾기
+      // 4-1. 직계 부모 찾기
+        console.log( $('.sub-contents').parent() );
+
+        $('.sub-contents').parent().css({
+          border : '1px solid #00f'
+        });
+
+      // 4-2. 조상 찾기
+        console.log( $('.sub-contents').parents() );
+
+        $('.sub-contents').parents('ul').css({ // parents의 매개변수에 ul를 지정해주지 않으면 body까지 적용되면 body에서 자손까지 상속되는 문제가 발생한다.
+          color : 'skyblue',
+          'font-size' : 13,
+          'font-style' : 'italic',
+        });
+
+      // 5. 형제 노드 찾기
+      // 5-1 siblings() 함수 사용하기
+        console.log( $('.gnb-list').siblings() ); // 선택자 gnb-list 이웃 모두를 찾는다.
+        console.log( $('.gnb-list').siblings('div') ); // 선택자 gnb-list 이웃중 div 선택자를 찾는다
+
+        $('.gnb-list').siblings('div').css( {
+          'text-decoration' : 'underline'    // box1, box2 언더라인 표시
+        });
+      // 5-2. prev() 함수 사용하기
+        console.log( $('.gnb-list').prev() );
+
+        $('.gnb-list').prev('div').css( {
+          'font-style' : 'italic'
+        });
+      // 5-3. next() 함수 사용하기
+        console.log( $('.gnb-list').next() );
+
+        $('.gnb-list').next('ul').css( {
+          'font-style' : 'italic',
+        });
+
+      });
+
+    </script>
+    <style>
+      h3 , h2{
+        margin : 0 50px;
+        font-weight:bold;
+      }
+    </style>
+  </head>
+  <body>
+
+    <pre style="line-height:25px;">
+
+      <h2>프로그래밍(코딩)언어를 배운다는것</h2>
+              - 코딩언어의 기초 이론 : 변수 , 조건 , 반복 ...
+              - 함수 사용 : 사용자 함수, 코어 함수(API)...
+              EX)자바스크립트 코어 함수,jQuery 코어 함수(API)
+
+      <h3>1. 노드 찾기</h3>
+              - $('찾을노드')
+              - 노드의 컬렉션(개체와 비슷)를 반환(return)
+              - '찾을노드' : CSS의 Select 와 같은 형태로 사용할 수 있음
+
+      <h3>2. 자식 노드 찾기</h3>
+            2-1. CSS Selector 형태 사용하기
+              - CSS Selector 를 사용하는 것과 동일하게 사용 할 수 있음
+            2-2. children() 함수 사용하기
+              - 직계 자식들을 찾아주는 함수
+              - 직계 자식들 중 특정 상태의 자식을 찾을 수 있음
+
+      <h3>2-3. find() 함수 사용하기</h3>
+              - 직계 자식 뿐만 아니라 자손들도 찾는 함수
+              - 넣어주는 인수에 따라서 자손 노드 찾는 방법이 다양해 짐
+
+      <h3>3. 특정 인덱스로 찾기</h3>
+            3-1 eq() 함수 사용하는 방법
+            3-2 eq() Selector 사용하는 방법
+            ** eq()는 반복문과 같이 사용할 수 있음
+
+      <h3>4. 부모 노드 찾기</h3>
+            4-1. 직계 부모 찾기
+              - parent() 함수 사용
+            4-2. 조상 찾기
+              - parents() 함수 사용
+      <h3>5. 형제 노드 찾기</h3>
+            5-1. siblings() 함수 사용하기
+              - 형제 노드 모두 찾는 함수
+            5-2. prev() 함수
+              - 바로 옆에 이웃한 형제 중 앞 노드
+            5-3. next() 함수 사용하기
+              - 바로 옆에 이웃한 형제 중 뒷 노드
+
+
+
+
+    </pre>
+
+    <div class="box1">box1-1</div>
+
+    <div class="box1">box1-2</div>
+
+    <ul class="gnb-list">
+      <li>menu1</li>
+      <li>menu2</li>
+      <li>menu3</li>
+    </ul>
+
+    <ul class="contents-list">
+      <li>
+        <div>contents1</div>
+        <ul>
+          <li>
+            sub-contents1
+            <ul>
+              <li>sub-sub-contents1</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="selected">contents2</li>
+      <li>contents3</li>
+    </ul>
+
+    <ul class="number-list">
+      <li>number</li>
+      <li>number</li>
+      <li>number</li>
+      <li>number</li>
+      <li>number</li>
+    </ul>
+
+
+    <ul>
+      <li>
+        <div>contents1</div>
+        <ul>
+          <li class="sub-contents">sub-contents1</li>
+        </ul>
+      </li>
+    </ul>
+  </body>
+</html>

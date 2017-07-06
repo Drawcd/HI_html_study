@@ -8,7 +8,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script>
     $(function(){
-      $('.gnb-depth1-link').on('mouseenter', function(){
+      $('.gnb-depth1-link').on('mouseenter', function(){ // on 함수
         $(this).next('.gnb-depth2').css('display', 'block');
       });
       $('.gnb').on('mouseleave', function(){

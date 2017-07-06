@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>이벤트 다루기</title>
+
+    <style>
+      .popup {
+        width:200px;
+        height:200px;
+        background:#fff;
+        border: 2px solid red;
+        position:absolute;
+        top:50%;
+        left:50%;
+        margin: -100px 0 0 -100px;
+      }
+
+      .popup-header {
+        height:30px;
+        background:red;
+        color:#fff;
+      }
+
+      .popup-header button {
+        background: none;
+        border:0;
+        color:#fff;
+        position:absolute;
+        top:3px;
+        right:3px;
+        cursor: pointer;
+      }
+/* 큰 사진의 가로 길이 : 215px*/
+      .image-top {
+        width:215px;
+        height:215px;
+        overflow:hidden;
+      }
+
+      .image-big.full-width{
+        width:100%;
+      }
+      .image-big.full-height{
+        height:100%;
+      }
+
+      .image-bottom {
+        width:215px;
+        margin-top:4px;
+      }
+
+      .image-bottom:after{
+        content:"";
+        display:block;
+        clear:both;
+      }
+
+      /* 작은 사진의 가로 길이 : 69px  , 사이여색 : 4px*/
+      .image-bottom-wrap{
+        width:69px;
+        height:69px;
+        margin-right:4px;
+        float:left;
+        overflow:hidden;
+
+      }
+
+      .image-bottom-wrap:last-child{
+        margin-right:0px;
+      }
+
+      .image-thumbnail.full-width{
+        width:100%;
+      }
+      .image-thumbnail.full-height{
+        height:100%;
+      }
+
+
+    </style>
+
+    <script src="lib/jquery-3.2.1.min.js"></script>
+    <script>
+    $(function(){
+      var layerPop = '';
+      $('.anchor').on('click', function(e){
+          // 이벤트를 제어하자 => event 객체를 사용해서 기능
+          // 1. on 함수에 인자로 넣어주는 함수에 매개변수 사용
+          // 2. 매개변수가 event 객체로 만들어짐
+          console.log(e);
+
+          // 태그의 기본동작을 막는 기능
+          // 메세지 출력시 href="#" 값때문에 스크롤이 상위로 올라가는 현상을 막기위해 function(e) 매개 변주를 대입하고 e.preventDefault(); 작동하면 스크롤을 막을 수 있다.
+          e.preventDefault();
+
+          // a = a + 1 => a += 1
+          layerPop =  '<div class="popup">';
+          layerPop += '  <div class="popup-header">';
+          layerPop += '    <div>메세지</div>';
+          layerPop += '    <button type="button">닫기</button>';
+          layerPop += '  </div>';
+          layerPop += '  <div class="popup-content">';
+          layerPop += '    <p>안녕하세요.</p>';
+          layerPop += '  </div>';
+          layerPop += '</div>';
+
+        $('body').append( layerPop );
+      });
+
+          // console.log( $('image-top').css('width'));
+          // console.log( $('image-top').css('height'));
+
+          var imageRatio = {
+
+
+            // areaWidth : parseInt( $('.image-top').css('width') ), 중복사용되는 $('.image-top')를 변수로 지정하여 아래 두줄과 같이 사용하자
+            // areaHeight : parseInt( $('.image-top').css('height')),
+            $imageTop : $('.image-top'),
+            $imageBig : $('.image-big'),
+            $imageThumb : $('.image-tumbnail'),
+            areaWidth : parseInt( this.$imageTop.css('width') ),
+            areaHeight : parseInt( this.$imageTop.css('height')),
+            //areaHeight : parseInt( this.$imageTop.css('height')) 객체 property에서는 this가안된다.
+            // areaRatio : this.areaWidth / this.areaHeeight, //객체 property에선 계산식이 들어 갈 수 없다.
+            imageWidth : 0,
+            imageHeight : 0,
+            areaRatio : 0,
+            imageRatio : 0,
+            imageValue : function( $image ){
+              this.imageWidth = parseInt( $image.css('width') );
+              this.imageHeight = parseInt( $image.css('height') );
+            },
+            imageDivide : function(width, height){
+              return width / height;
+            }
+          };
+
+
+          imageRatio.areaRatio = imageRatio.imageDivide( imageRatio.areaWidth, imageRatio.areaHeight );
+          imageRatio.imageValue( imageRatio.$imageBig );
+          imageRatio.imageRatio = imageRatio.imageDivide( imageRatio.imageWidth, imageRatio.imageHeight );
+          console.log(imageRatio.$imageBig);
+          if( imageRatio.areaRatio > imageRatio.imageRatio ){
+            imageRatio.$imageBig.addClass('full-width');
+          } else {
+            imageRatio.$imageBig.addClass('full-height');
+          }
+          for(var i=0; i<$('.image-bottom-wrap').length; i++){
+            imageRatio.imageValue( imageRatio.$imageThumb );
+            imageRatio.imageRatio = imageRatio.imageDivide( imageRatio.imageWidth, imageRatio.imageHeight );
+            if( imageRatio.areaRatio > imageRatio.imageRatio ){
+              imageRatio.$imageThumb.eq(i).addClass('full-width');
+            } else {
+              imageRatio.$imageThumb.eq(i).addClass('full-height');
+            }
+          }
+        });
+
+    </script>
+  </head>
+  <body>
+
+    <pre>
+      이벤트
+      1. 이벤트의 종류
+        - 마우스 이벤트 / 키보드 이벤트 / Element 이벤트 / 사용자 이벤트
+      2. 이벤트 단계
+        2-1. capturing
+        2-2. Targeting
+        2-3. Bubbling
+      3. 이벤트 함수
+        - $(대상).on('이벤트 종류', 함수 );
+          http://api.jquery.com/on/
+      4. 이벤트 이름
+        - blur : 포커스를 잃었을 때
+          http://api.jquery.com/blur/
+        - click : 마우스를 클릭했을 때
+          http://api.jquery.com/click/
+        - focusin / focusout : 포커스를 얻었을 때 / 잃었을 떄
+          http://api.jquery.com/focusin/
+          http://api.jquery.com/focusout/
+        - keydown / keyup : 키보드를 눌렀을 때 / 떼 었을 때
+          http://api.jquery.com/keydown/
+          http://api.jquery.com/keyup/
+        - mousedown /mouseup : 마우스 버튼 눌렀을 때 / 떼 었을 때
+          http://api.jquery.com/mousedown/
+          http://api.jquery.com/mouseup/
+        - mouseenter / mouseleave : 마우스 커서가 닿았을 때 / 떨어졌을 때 (bubbling 발생하지 않음)
+          http://api.jquery.com/mouseenter/
+          http://api.jquery.com/mouseleave/
+        - mouseover / mouseout : 마우스 커서가 닿았을 때 / 떨어졌을 때 (bubbling 발생함 : bubbling 이 생기면 안좋다고 함 한번 알아보자)
+          http://api.jquery.com/mouseover/
+          http://api.jquery.com/mouseout/
+        - resize : 브라우저 크기가 변경 될 때 ( window객체 에만 사용 가능한 함수 "$( window ).resize(function() {")
+          http://api.jquery.com/resize/
+        - scroll : 스크롤 될 때 ( 웹 페이지 전체 스크롤 - window 객체 사용 )
+          http://api.jquery.com/scroll/
+        - load / unload : 대상이 로딩 되었을 때 / 제거 되었을 때 ( 이미지가 모두 로딩된 이후에 코드가 실행되게 할 때 주로 사용)
+          http://api.jquery.com/load-event/
+          http://api.jquery.com/unload/
+        - select : 텍스트를 마우스로 드래그 해서 선택했을 때
+          http://api.jquery.com/select/
+    </pre>
+    <div>
+      <a href="http://www.naver.com" class="anchor">네이버 링크</a>
+    </div>
+
+    <div class="images-wrap">
+      <div class="image-top">
+        <img src="images/5-1.jpg" alt="" class="image-big">
+      </div>
+      <div class="image-bottom">
+        <!-- img는 block로 사용하는것이 좋다. 인라인일경우 margin 기본여백이 있기 때문이다. -->
+        <div class="image-bottom-wrap"><img src="images/5-1.jpg" alt="" class="image-thumnail"/></div>
+        <div class="image-bottom-wrap"><img src="images/5-2.jpg" alt="" class="image-thumnail"/></div>
+        <div class="image-bottom-wrap"><img src="images/6-1.jpg" alt="" class="image-thumnail"/></div>
+      </div>
+    </div>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+    <div>
+      <a href="#" class="anchor">메세지 출력</a>
+    </div>
+
+
+
+    <script>
+
+    </script>
+
+
+  </body>
+</html>

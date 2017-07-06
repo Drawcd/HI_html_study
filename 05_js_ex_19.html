@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>스타일제어</title>
+
+      <style>
+        .box1{
+          width:100px;
+          height:100px;
+          background:hotpink;
+          border: 5px dashed blueviolet;
+
+        }
+      </style>
+      <script src="lib/jquery-3.2.1.min.js"></script>
+      <script>
+        // (function(){})(); => 즉시 실행 함수 : 패키징
+        // $(function(){}); => jQuery 진입점 / 시작점
+        $(function(){
+          //박스의 현재 크기값에 가로 300, 세로 200 픽셀 만큼 더해서 크기 확대
+          // console.log( $('.box1').css('width') ); //box1의 css값의 width를 console.log에 출력해라
+          var boxWidth = 0;
+          var boxHeight = 0;
+          var $box1 = $('.box1');
+
+
+          // boxWidth = $('.box1').css('width');    // 같은 변수를 여러번 사용할때 변수 자체로
+          // boxHeight = $('.box1').css('height');
+          boxWidth = parseInt($box1.css('width') ); //1번째 방법  parseInt는 javascript 코어함수
+          boxHeight = parseInt($box1.css('height') );
+          // boxWidth = $box1.css('width');
+          // boxHeight = $box1.css('height');
+
+          // boxWidth = parseInt(boxWidth) + 300; // 2번째 방법
+          boxWidth = boxWidth + 300;
+          boxHeight = boxHeight + 200;
+
+          console.log(boxWidth);
+// $box1.css('width'); 불러왔을때 100px까지 불러들여 문자로 인식하게 된다. 이를 해결하기 위해 아래 링크를 참고하자
+// https://stackoverflow.com/questions/6917188/jquery-min-width-vs-width-how-to-remove-px
+// 위의 링크에서 해답을 확인 parseInt 함수를 사용하면 문자를 정수 data로 변환해준다.
+// https://www.google.co.kr/search?q=jquery+css()+remove+px&rlz=1C1WPZB_enKR739KR739&oq=jquery+css()+remove+px&aqs=chrome..69i57j0l2.17197j0j8&sourceid=chrome&ie=UTF-8
+//https://www.w3schools.com/jsref/jsref_parseint.asp
+          //값을 출력하는 방식
+          $box1.css({
+            width : boxWidth,
+            height : boxHeight
+          });
+
+        });
+      </script>
+
+
+
+  </head>
+  <body>
+
+    <pre>
+
+      스타일 제어
+
+      -css() 함수 사용
+
+        1. 스타일 제어 - CSS Property 설정
+        2. 적용되어 있는 스타일의 값을 읽는기능
+
+    </pre>
+
+<div class="box1">box1</div>
+<div class="box2">box2</div>
+
+  </body>
+</html>
