@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>애니메이션</title>
+
+    <style>
+      h2 {
+        color:#03a9f4;
+      }
+      .wrap {
+        float:left;
+        background:#9e9e9e;
+      }
+      .box {
+        width:200px;
+        height:200px;
+        background:#ffc107;
+      }
+      .fade {
+        display:none;
+      }
+      .slide {
+        display:none;
+      }
+      .slide-stop {
+        display:none;
+      }
+      .show {
+        display:none;
+      }
+    </style>
+
+    <script src="lib/jquery-3.2.1.min.js"></script>
+    <script>
+
+    $(function(){
+
+// fadIn 함수 :   $('원격지').fadeIn(시간, );
+      $('.btn-fade-in').on('click',function(){
+        // $().fadeIn(애니메이션 시간, 콜백함수);
+        // 애니메이션 시간 : 단위 ms : 1000ms = 1초
+        // 콜백함수 : 함수의 동작이 끝나고 실행될 기능
+        // fadeIn이 작동된후 콜백 함수가 작동 된다.
+        $('.fade').fadeIn(1000, function(){
+          $('.fade-out-msg').remove();
+          $('.fade-in-wrap').append('<div class="fade-in-msg">Animation fade in Complete</div>');
+        });
+      });
+
+
+// fadeOut() 함수
+      $('.btn-fade-out').on('click',function(){
+        $('.fade').fadeOut(1000, function(){
+          $('.fade-in-msg').remove();
+          $('.fade-in-wrap').append('<div class="fade-out-msg">Animation fade out Complete</div>');
+        });
+      });
+
+
+// slideDown() 함수
+// 여러번 미리 반복 작업을 했을때 대기했던 작업들이 자동으로 작동되는 단점이 있다.
+      $('.btn-slide-down').on('click', function(){
+          $('.slide').slideDown(1000, function(){
+          $('.slide-up-msg').remove();
+          $('.slide-wrap').append('<div class="slide-down-msg">Animation slide down Complete</div>')
+        });
+      });
+
+      $('.btn-slide-up').on('click', function(){
+        $('.slide').slideUp(1000, function(){
+          $('.slide-down-msg').remove();
+          $('.slide-wrap').append('<div class="slide-up-msg">Animation slide up Complete</div>')
+        });
+      });
+
+// stop() 함수
+// 여러번 미리 중복 작업이 실행되지 않도록 stop() 함수를 사용하는 경우가 많다.
+      $('.btn-slide-down-stop').on('click', function(){
+        $('.slide-stop').stop().slideDown(1000, function(){
+          $('.slide-up-msg-stop').remove();
+          $('.slide-down-msg-stop').remove(); // remove 중복 적용했다 up 일경우 up 클릭하면 문장이 중복 추가 되기때문이다
+          $('.slide-wrap-stop').append('<div class="slide-down-msg-stop">Animation slide down Complete</div>')
+        });
+      });
+      $('.btn-slide-up-stop').on('click', function(){
+        $('.slide-stop').stop().slideUp(1000, function(){
+          $('.slide-down-msg-stop').remove();
+          $('.slide-up-msg-stop').remove();
+          $('.slide-wrap-stop').append('<div class="slide-up-msg-stop">Animation slide up Complete</div>')
+        });
+      });
+
+
+// show() 함수
+      $('.btn-show').on('click', function(){
+        $('.show').show(1000, function(){
+          $('.hide-msg').remove();
+          $('.show-wrap').append('<div class="show-msg">Animation show Complete</div>')
+        });
+      });
+
+      $('.btn-hide').on('click', function(){
+        $('.show').hide(1000, function(){
+          $('.show-msg').remove();
+          $('.show-wrap').append('<div class="hide-msg">Animation hide Complete</div>')
+        });
+      });
+
+    });
+
+    </script>
+  </head>
+  <body>
+<pre>
+
+  1.fadeIn / fadeOut
+  - 서서히 사라지고 서서히 발생하는 기능을 제공합니다.
+  http://api.jquery.com/fadeIn/
+  http://api.jquery.com/fadeOut/
+
+  2. slideDown / slideUp
+  - 서서히 내려오는  / 서서히 올라가며 사라진다
+
+  3. stop()
+  - 진행중인 애니메이션 효과를 취소하는 함수
+</pre>
+
+    <hr>
+    <h2>fadeIn / FadeOut</h2>
+    <div class="fade-in-wrap">
+      <button class="btn-fade-in">fade In</button>
+      <button class="btn-fade-out">fade out</button>
+      <p>예1) 박스 고정 텍스트 효과</p>
+      <div class="box">
+        <div class="fade">box1</div>
+      </div>
+      <p>예2) 박스 효과</p>
+      <div class="box fade">
+        <div class="">box1</div>
+      </div>
+    </div>
+    <hr>
+
+
+      <h2>slideDown / slideUp</h2>
+      <div class="slide-wrap">
+        <button class="btn-slide-down">Slide Down</button>
+        <button class="btn-slide-up">Slide Up</button>
+        <div class="box slide">
+          box slide
+        </div>
+        <div class="slide-up-msg slide-down-msg">Animation slide up Complete</div>
+      </div>
+      <hr>
+
+      <h2>slideDown / slideUp 에 stop() 함수 적용</h2>
+      <div class="slide-wrap-stop">
+        <button class="btn-slide-down-stop">Slide Down stop()</button>
+        <button class="btn-slide-up-stop">Slide Up stop()</button>
+        <div class="box slide-stop">
+          box slide stop()
+        </div>
+        <div class="slide-up-msg-stop slide-down-msg-stop">Animation slide up Complete</div>
+      </div>
+      <hr>
+
+
+    <h2>show / hide</h2>
+    <div class="show-wrap">
+      <button class="btn-show">show</button>
+      <button class="btn-hide">hide</button>
+      <div class="box show">
+        show
+      </div>
+      <div class="hide-msg show-msg">Animation hide Complete</div>
+    </div>
+
+    <hr>
+
+  </body>
+</html>

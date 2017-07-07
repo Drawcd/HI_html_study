@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>animate 함수</title>
+
+    <style>
+      body {
+        margin:0;
+        padding:0;
+      }
+      h2{
+        color : #009688;
+      }
+      .box {
+        width:100px;
+        height:100px;
+        background:#ffcc00;
+      }
+      .box1 , .box2, .box3, .box4 {
+        position:relative;
+        top:0;
+        left:0;
+      }
+
+      .rolling {
+        width:400px;
+        position:relative;
+        left:50%;
+        margin-left:-200px;
+      }
+      .view {
+        width:400px;
+        height:300px;
+        overflow:hidden;
+        position:relative;
+      }
+
+      .view-image{
+        display:block;
+        position:absolute;
+        top:0;
+        left:0;
+      }
+
+      .arrow {
+        display:block;
+        width:30px;
+        height:30px;
+        border: 0;
+        background:url(images/arrow.png) no-repeat;
+        text-indent: -9999px;
+        /*cursor: pointer;*/
+        position: absolute;
+        background-position: -30px 0;
+        top:0;
+        left:0;
+      }
+
+      .arrow.left{
+        background-position: 0px 0px;
+        position:absolute;
+        top:0;
+        left:auto; /* arrow의 left때문에 좌측으로 붙기때문에 left를 무력화 시키기 위해 auto를 넣는다*/
+        right:0;
+      }
+
+      .arrow-wrap {
+        width:100%;
+        position:absolute;
+        top:50%;
+        margin-top:-15px;
+        left:0;
+      }
+
+
+    </style>
+
+    <script src="lib/jquery-3.2.1.min.js"></script>
+    <script>
+
+      $(function(){
+
+      // css() 함수 사용했을 때 점프이동
+              $('.btn-jump-right').on('click', function(){
+                $('.box1').css({
+                  left : 300
+                });
+                console.log( 'css : ' + $('.box1').css('left'));
+              });
+              // 개인 응용
+              $('.btn-jump-left').on('click', function(){
+                $('.box1').css({
+                  left : 0
+                });
+                console.log( 'css : ' + $('.box1').css('left'));
+              });
+
+
+      // animate() 함수 사용했을 때 애니메이션 이동
+              $('.btn-move-right').on('click', function(){
+                // $().animation( css Property, 애니메이션 시간, 콜백함수)
+                $('.box2').stop().animate({  //stop() 적용
+                  left : 300
+                }, 1000);
+              });
+              // 개인 응용
+              $('.btn-move-left').on('click', function(){
+                // $().animation( css Property, 애니메이션 시간, 콜백함수)
+                $('.box2').stop().animate({  //stop() 적용
+                  left : 0
+                }, 1000);
+              });
+
+      // css 속성을 한번에 적용해서 애니메이션
+              $('.btn-star-all').on('click', function(){
+                // $().animation( css Property, 애니메이션 시간, 콜백함수)
+                $('.box3').animate({
+                  width : 300,
+                  height : 300,
+                  left : 300
+                }, 1000);
+              });
+              // 개인 응용
+              $('.btn-star-rall').on('click', function(){
+                // $().animation( css Property, 애니메이션 시간, 콜백함수)
+                $('.box3').animate({
+                  width : 100,
+                  height : 100,
+                  left : 0
+                }, 500);
+              });
+
+      // css 속성을 차례대로 애니메이션 적용
+              // css 속성을 차례대로 애니메이션 - 메소드 체이닝 방법
+              $('.btn-star-part1').on('click', function(){
+                // $().animation( css Property, 애니메이션 시간, 콜백함수)
+                $('.box4').animate({width : 300}, 1000)
+                           .animate({height : 300}, 500)
+                           .animate({left : 300}, 300);
+              });
+              // css 속성을 차례대로 애니메이션 - 콜백함수 사용 방법
+              // 콜백함수는 함수가 실행된 다음 실행되는 내용이다.
+              $('.btn-star-part2').on('click', function(){
+                // $().animation( css Property, 애니메이션 시간, 콜백함수)
+                $('.box4').animate({left : 0}, 300, function(){
+                  $('.box4').animate({height : 100}, 300, function(){
+                    $('.box4').animate({ width : 100}, 300);
+                  });
+
+                });
+
+              });
+
+          //End
+          });
+
+      $(function(){
+/**
+* 함수 기능
+* 1. 초기화 - init()
+*
+*/
+        function init(){
+        $('.view-image').eq(0).css({left: 0});
+        $('.view-image').eq(1).css({left: 400});
+        $('.view-image').eq(2).css({left: -400});
+        }
+
+      //실행부
+      init();
+
+      //End
+      });
+    </script>
+  </head>
+  <body>
+
+    <h2>css() 함수 사용 right 이동</h2>
+    <div>
+      <button type="button" class="btn-jump-right">Jump right</button><button type="button" class="btn-jump-left">Jump left</button>
+      <div class="box box1">box1</div>
+    </div>
+    <hr>
+
+    <h2>animate() 함수 사용 right 이동 stop()함수 적용</h2>
+    <div>
+      <button type="button" class="btn-move-right">우측이동</button><button type="button" class="btn-move-left">좌측이동</button>
+      <div class="box box2">box2</div>
+    </div>
+    <hr>
+
+    <h2>CSS 속성을 한번에 적용</h2>
+    <div>
+      <button type="button" class="btn-star-all">css 한번에 적용</button><button type="button" class="btn-star-rall">css 한번에 취소</button>
+      <div class="box box3">box3</div>
+    </div>
+    <hr>
+
+    <h2>CSS 속성을 순차적으로 적용</h2>
+    <div>
+      <button type="button" class="btn-star-part1">차례대로 적용</button><button type="button" class="btn-star-part2">차례대로 취소</button>
+      <div class="box box4">box4</div>
+    </div>
+    <hr>
+
+    <h2>rolling slide 만들기</h2>
+    <div class="rolling">
+      <div class="view">
+        <a href=""><img src="images/car01.jpg" alt="" class="view-image"></a>
+        <a href=""><img src="images/car02.jpg" alt="" class="view-image"></a>
+        <a href=""><img src="images/car03.jpg" alt="" class="view-image"></a>
+      </div>
+      <div class="arrow-wrap">
+        <button class="arrow left">left</button>
+        <button class="arrow right">right</button>
+      </div>
+    </div>
+
+
+
+  </body>
+</html>
