@@ -170,6 +170,8 @@
 
           //End
           });
+//이미지 슬라이딩
+
 
           $(function(){
 /**
@@ -394,17 +396,50 @@
             console.log( $(this).index('.paging-item') );
 
             var indexNumber = $(this).index('.paging-item');
-            if( (currentIndex + 1) == indexNumber ){
-              moveLeft();
-              } else if( ( currentIndex-1) == indexNumber ){
-              moveRight();
-              };
 
+            if( currentIndex != indexNumber ){
+              if( currentIndex == 0){
+                if( indexNumber == $('.view-image').length-1) {   //length -1 해주는 이유는 .view-image를 가진 이미지 수를 확인 하는데 있어 0부터 숫자를 세기 때문에 +1로 갯수로 알기 위함이다.
+                  nextIndex = currentIndex - 1;
+                  if( !$('.view-image').is('animated')){
+                    moveRight();
+                  }
+                } else {
+                  nextIndex = currentIndex + 1;
+                  if( !$('.view-imiage').is(':animated')){
+                    moveLeft();
+                  }
+                }
+              } else if( currentIndex == $('.view-image').length-1 ){
+                if( indexNumber == 0 ){
+                  nextIndex = currentIndex + 1;
+                  if( !$('.view-image').is(':animated') ){
+                    moveLeft();
+                  }
+                } else {
+                  nextIndex = currentIndex - 1;
+                  if( !$('.view-image').is(':animated') ){
+                    moveRight();
+                  }
+                }
+              } else {
+
+                if( currentIndex < indexNumber ){
+                  nextIndex = currentIndex + 1;
+                  if( !$('.view-image').is(':animated') ){
+                     moveLeft();
+                   }
+                 } else {
+                  nextIndex = currentIndex - 1;
+                  if( !$('.view-image').is(':animated') ){
+                     moveRight();
+                  }
+                }
+              }
+            }
           });
-
-
-          //End
-          });
+        //End
+        });
 
 
     </script>
