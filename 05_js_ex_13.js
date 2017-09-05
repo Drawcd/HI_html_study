@@ -174,7 +174,7 @@ car.printName();
 
 console.log('---------------------');
 
-car.printWeight(3); //numver = 3 으로 대입하여 계산됨으로 1060이 나온다
+car.printWeight(3); //number = 3 으로 대입하여 계산됨으로 1060이 나온다
 
 
 })();

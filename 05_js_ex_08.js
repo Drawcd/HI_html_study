@@ -25,7 +25,7 @@ function tenHap(){
 
   console.log(hap);
 }
-
+tenHap();
 function gugudan(){
 
   for( var i=2; i<10; i++ ){
